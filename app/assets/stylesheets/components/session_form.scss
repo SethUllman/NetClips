@@ -10,6 +10,7 @@
   background: rgba(0, 0, 0, 0.8);
   border-radius: 3px;
   display: flex;
+  flex-direction: column;
   width: 450px;
   height: 600px;
   margin: 0 auto;
@@ -50,6 +51,7 @@
 
 .password-div {
   display: flex;
+  position: relative;
   background-color: #323232;
   border-radius: 5px;
   width: 316px;
@@ -87,6 +89,15 @@
   display: flex;
   font-family: sans-serif;
   color: grey;
-  padding: 240px 0 30px 118px;
+  // padding: 240px 0 30px 118px;
+  justify-content: space-between;
   
+}
+
+.error-ul {
+  font-family: sans-serif;
+  color: orange;
+  margin: 0 auto;
+  padding: 0 0 24px 70px;
+
 }

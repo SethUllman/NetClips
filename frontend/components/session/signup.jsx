@@ -20,15 +20,29 @@ class Signup extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     this.props.createNewUser(this.state)
-      .then( () => this.props.history.push('/movies'))
+      // .then( () => this.props.history.push('/movies'))
+  }
+
+  renderErrors() {
+    return (
+      <ul className='error-ul'>
+        {this.props.errors.map((error, i) => (
+          <li className='error-li' key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
     return (
       <div className="session-form">
+        {/* <div>{this.renderErrors()}</div> */}
 
         <form>
           <h2 className='signin-header'>Sign Up</h2>
+          
           <div className='email-div'>
             <input
               className='email-input'
@@ -47,6 +61,7 @@ class Signup extends React.Component{
               onChange={this.handleInput('password')}
             />
           </div>
+          {this.renderErrors()}
           <div className='button-div'>
             <button className='submit-button' onClick={this.handleSubmit}>Sign Up</button>
           </div>

@@ -20,14 +20,27 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state)
-      .then(() => this.props.history.push('/movies'));
+    const user = Object.assign({}, this.state);
+    this.props.login(user)
+      // .then(() => this.props.history.push('/movies')); 
+  }
+
+  renderErrors() {
+    return (
+      <ul className='error-ul'>
+        {this.props.errors.map((error, i) => (
+          <li className='error-li' key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
-    // console.log(this.props);
     return (
       <div className="session-form">
+        
         
         <form>
           <h2 className='signin-header'>Sign In</h2>
@@ -40,6 +53,7 @@ class Login extends React.Component {
                 onChange={this.handleInput('email')}
               />
           </div>
+          
           <div className='password-div'>
             <input
                 className='password-input'
@@ -49,14 +63,15 @@ class Login extends React.Component {
                 onChange={this.handleInput('password')}
               />
           </div>
+          {this.renderErrors()}
           <div className='button-div'>
             <button className='submit-button' onClick={this.handleSubmit}>Sign In</button>
           </div>
-          <p className="signup-btn" >
-            New to NetClips? <Link id='signup-link' to="/signup">Sign up now</Link> .
-          </p>
+          
         </form>
-  
+          <p className="signup-btn" >
+            <span>New to NetClips? </span><Link id='signup-link' to="/signup"> Sign up now</Link> .
+          </p>
       </div>
     );
   }

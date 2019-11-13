@@ -8,4 +8,8 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Signup);
+const mapStateToProps = state => ({
+  errors: state.errors.session
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

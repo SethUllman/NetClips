@@ -1,1 +1,1 @@
-json.extraxt! @user, :id, :email, :watch_list_items
+json.extract! @user, :id, :email, :watch_list_items
