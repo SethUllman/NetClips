@@ -1,14 +1,14 @@
 class User < ApplicationRecord
-  validates :email, :password_digest, :session_token, presence: true
+  validates :email, :password_digest, :session_token, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true}
   after_initialize :ensure_session_token
 
-  has_one :watch_list,
+  has_many :watch_list_items,
   foreign_key: :user_id,
   class_name: :WatchList
 
   has_many :movies,
-  through: :watch_list,
+  through: :watch_list_items,
   source: :movies
 
   attr_reader :password 

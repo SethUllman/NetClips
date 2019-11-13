@@ -1,0 +1,92 @@
+
+
+.whole-page {
+  background-image: url('https://backgrounddownload.com/wp-content/uploads/2018/09/background-netflix-5.jpg');
+  background-size: cover;
+  min-height: 1125px;
+}
+
+.session-form {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 3px;
+  display: flex;
+  width: 450px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.signin-header {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+  margin: 20px 40px 20px 67px;
+  padding-top: 60px;
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1;
+}
+
+.email-div {
+  background-color: #323232;
+  border-radius: 5px;
+  width: 316px;
+  height: 40px;
+  margin: 20px 67px 20px 67px;
+  align-items: center;
+  display: flex;
+}
+
+.email-input {
+  margin: 0px 30px 0px 30px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 16px;
+  vertical-align: middle;
+  width: 300px;
+}
+
+.password-div {
+  display: flex;
+  background-color: #323232;
+  border-radius: 5px;
+  width: 316px;
+  height: 40px;
+  margin: 28px 67px 28px 67px;
+}
+
+.password-input {
+  margin: 0px 50px 0px 30px;
+  color: white;
+  font-family: sans-serif;
+  vertical-align: middle;
+  width: 300px;
+}
+
+.submit-button {
+  background-color: red;
+  color: white;
+  font-family: sans-serif;
+  opacity: 1;
+
+  border-radius: 5px;
+  width: 316px;
+  height: 40px;
+  margin: 0px 67px 0px 67px;
+  text-align: center;
+}
+
+#signup-link {
+  font-family: sans-serif;
+  color: white;
+}
+
+.signup-btn {
+  display: flex;
+  font-family: sans-serif;
+  color: grey;
+  padding: 240px 0 30px 118px;
+  
+}

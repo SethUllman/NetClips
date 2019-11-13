@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('./fonts/BebasNeue.otf')
+}
+
+.nav-bar {
+  display: flex;
+}
+
+.logo {
+  font-family: BebasNeue;
+  font-size: 70px;
+  color: #e51413;
+  padding-top: 10px;
+  padding-left: 15px;
+
+}
