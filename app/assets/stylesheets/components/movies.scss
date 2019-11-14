@@ -1,3 +1,53 @@
-// Place all the styles related to the Movies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.movie-ul {
+  display: flex;
+  padding: 0 55px;
+}
+
+.movie-li {
+  flex: 0 0 19.7%;
+  text-align: center;
+  margin: 0 2px;
+  transition: transform 300ms ease 100ms;
+  width: 15vw;
+  max-width: 230px;
+  height: 10vw;
+  max-height: 130px;
+  background: white;
+  position: relative;
+}
+
+.movie-li-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.movie-ul:hover .movie-li {
+  transform: translateX(-25%);
+}
+
+.movie-li:hover ~ .movie-li {
+  transform: translateX(25%);
+}
+
+.movie-li:hover {
+  transform: scale(1.5) !important;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 7px;
+  position: absolute;
+  bottom: 5px;
+}

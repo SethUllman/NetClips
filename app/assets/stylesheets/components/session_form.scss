@@ -1,4 +1,6 @@
-
+html {
+  overflow: hidden;
+}
 
 .whole-page {
   background-image: url('https://backgrounddownload.com/wp-content/uploads/2018/09/background-netflix-5.jpg');
@@ -89,8 +91,7 @@
   display: flex;
   font-family: sans-serif;
   color: grey;
-  // padding: 240px 0 30px 118px;
-  justify-content: space-between;
+  padding: 240px 0 30px 118px;
   
 }
 

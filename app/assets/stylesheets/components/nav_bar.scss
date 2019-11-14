@@ -5,14 +5,41 @@
 
 .nav-bar {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-bottom: 40px;
 }
 
 .logo {
   font-family: BebasNeue;
-  font-size: 70px;
+  font-size: 40px;
   color: #e51413;
   padding-top: 10px;
-  padding-left: 15px;
+  padding-left: 25px;
+  padding-right: 20px;
+}
 
+.nav-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-bar-ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar-li {
+  color: white;
+  font-size: 12px;
+  font-family: arial;
+  padding: 0 0 0 15px;
+}
+
+.logout-btn {
+  display: flex;
+  color: white;
+  font-family: arial;
+  padding: 0 25px 0 0;
 }

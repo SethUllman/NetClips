@@ -6,7 +6,7 @@ import React from 'react';
 
 const mapStateToProps = state => {
   return {
-    movies: Object.keys(state.movies)
+    movies: Object.values(state.movies)
   }
 }
 

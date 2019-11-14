@@ -1,8 +1,11 @@
 import React from 'react';
+import MovieItem from './movie_item.jsx';
+
 
 class movieIndex extends React.Component{
   constructor(props){
     super(props);
+    
   }
 
   componentDidMount() {
@@ -10,9 +13,23 @@ class movieIndex extends React.Component{
   }
 
   render(){
+    const { movies } = this.props;
+
+
     return (
-      <div>Movies!</div>
-    )
+      <div>
+        <ul className='movie-ul'>
+          {
+            movies.map( movie => (
+              <MovieItem
+              key={movie.id}
+              movie={movie}
+              />
+            ))
+          }
+        </ul>
+      </div>
+    );
   }
 }
 
