@@ -6,6 +6,8 @@ import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import MoviesIndexContainer from './movies/movie_index_container';
+import MoviesShowContainer from './movies/movie_show_container';
+
 
 
 
@@ -17,7 +19,8 @@ export default () => (
     <Switch>
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
-      <ProtectedRoute path="/movies" component={MoviesIndexContainer} />
+      {/* <ProtectedRoute path="/movies" component={MoviesIndexContainer} /> */}
+      <ProtectedRoute path="/movies" component={MoviesShowContainer} />
       <RootRoute exact path="/" />
     </Switch>
   </div>

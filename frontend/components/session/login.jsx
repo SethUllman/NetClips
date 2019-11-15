@@ -41,7 +41,6 @@ class Login extends React.Component {
     return (
       <div className="session-form">
         
-        
         <form>
           <h2 className='signin-header'>Sign In</h2>
           <div className='email-div'>
@@ -70,7 +69,9 @@ class Login extends React.Component {
           
         </form>
           <p className="signup-btn" >
-            <span>New to NetClips? </span><Link id='signup-link' to="/signup"> Sign up now</Link> .
+            <span>New to NetClips? </span><Link id='signup-link' to="/signup" onClick={() => {
+              this.setState(this.state)
+            }}> Sign up now</Link> .
           </p>
       </div>
     );

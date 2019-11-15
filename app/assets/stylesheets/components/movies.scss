@@ -13,7 +13,8 @@
   max-width: 230px;
   height: 10vw;
   max-height: 130px;
-  background: white;
+  background-image: url('https://i.pinimg.com/originals/98/52/80/985280b8d9904fd52d83b17433694a7a.jpg');
+  background-size: cover;
   position: relative;
 }
 
@@ -101,7 +102,8 @@
 }
 
 .right {
-  background: green;
+  background-image: url('https://i.pinimg.com/originals/98/52/80/985280b8d9904fd52d83b17433694a7a.jpg');
+  background-size: cover;
   width: 70%;
 }
 
@@ -113,4 +115,10 @@
   right: 0;
   bottom: 0;
   padding: 30px;
+}
+
+.movie-player {
+  position: fixed;
+  height: 100%;
+  width: 100%;
 }

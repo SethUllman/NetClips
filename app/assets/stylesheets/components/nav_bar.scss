@@ -8,13 +8,14 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 40px;
+  background-color: black;
+  background-clip: content-box;
 }
 
 .logo {
   font-family: BebasNeue;
   font-size: 40px;
   color: #e51413;
-  padding-top: 10px;
   padding-left: 25px;
   padding-right: 20px;
 }
