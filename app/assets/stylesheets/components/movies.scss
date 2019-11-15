@@ -17,14 +17,29 @@
   position: relative;
 }
 
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1 }
+}
+
+.movie-li:hover .movie-li-title {
+  -webkit-animation: fadein 1s;
+  animation: fadein 1s;
+  opacity: 1;
+}
+
+.movie-li-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10%;
+  opacity: 0;
+}
+
 .movie-li-content {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  // justify-content: center;
-  // text-align: center;
 }
 
 .movie-ul:hover .movie-li {
