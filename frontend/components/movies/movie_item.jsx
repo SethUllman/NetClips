@@ -1,10 +1,22 @@
 import React from 'react';
-
-export default ({ movie }) => {
+let MovieItem = ({ movie, that}) => {
   return (
     <li key={movie.id} className='movie-li'>
-      <h2 className='movie-li-content'>{movie.title}</h2>
-      <button className="arrow down"></button>
+      <div className='movie-li-content'>
+        <h2>{movie.title}</h2>
+        <h3 
+          className='content-drop' 
+          key={`btn-${movie.id}`}
+          onClick={() => {
+            return (
+              that.setState({showResults: true, currentMovie: movie})
+            )
+          }}
+        >▼</h3>
+      </div>
+      
     </li>
   );
 }
+
+export {MovieItem};
