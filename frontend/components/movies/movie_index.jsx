@@ -1,5 +1,9 @@
 import React from 'react';
 import {MovieItem} from './movie_item.jsx';
+import ReactPlayer from 'react-player';
+// import MoviePlayer from './movie_player.jsx';
+// import YouTube from 'react-youtube';
+
 
 
 class movieIndex extends React.Component{
@@ -8,7 +12,7 @@ class movieIndex extends React.Component{
     this.state = {
       movies: this.props.movies,
       showResults: false,
-      currentMovie: null
+      currentMovie: null,
     }
   }
 
@@ -25,7 +29,7 @@ class movieIndex extends React.Component{
   render(){
     
     const { movies } = this.props;
-    const MovieShow = (this.state.showResults) ? (
+    this.MovieShow1 = (this.state.showResults) ? (
       <div className='drop-content'>
         <div className='drop-background'>
           <div className='left'></div>
@@ -67,14 +71,49 @@ class movieIndex extends React.Component{
       <div></div>
     );
 
+    if (this.state.showResults){
+      if (this.state.currentMovie.genres === ('Sci-Fi & Fantasy')) {
+        this.MovieShow2 = this.MovieShow1;
+        this.MovieShow1 = <div></div>;
+      } else if(this.state.currentMovie.genres === ('Drama')) {
+        this.MovieShow3 = this.MovieShow1;
+        this.MovieShow1 = <div></div>
+      } else if(this.state.currentMovie.genres === ('Critically Acclaimed')) {
+        this.MovieShow4 = this.MovieShow1;
+        this.MovieShow1 = <div></div>
+      }
+    }
+
     
     
 
     return (
-      <div>
+      <div className='movies-index-div'>
+        <div className='featured-movie-div'>
+          <div className='featured-movie-info'>
+            <div className='movie-title-div'>
+              <h1 className='movie-title'>Sonic</h1>
+            </div>
+          </div>
+          <ReactPlayer 
+            className='featured-movie'
+            url='https://www.youtube.com/watch?v=SXDa8i75PpM'
+            playing={true}
+            controls={false}
+            width={'100%'}
+            height={'55vw'}
+            loop={true}
+            volume={0}
+            muted={true}
+          />
+        </div>
         <div className='genre-div'>
-          <h3 className='genre-title'>Comedy</h3>
+          
           <ul className='movie-ul'>
+            <div>
+              <h3 className='genre-title'>TV Comedy</h3>
+            </div>
+            <div className='movie-lis'>
             {
               movies.map( movie => (
                 <MovieItem
@@ -85,32 +124,78 @@ class movieIndex extends React.Component{
                 />
               ))
             }
+            </div>
           </ul>
-            {
-              if(this.state.currentMovie.genres.inlcudes('TV Comedy')){
-                r
-              }
-            }
           <div>
-            
+            {this.MovieShow1}
           </div>
         </div>
-        <ul className='movie-ul'>
-          {
-            movies.map(movie => (
-              <MovieItem
-                key={movie.id}
-                movie={movie}
-                that={this}
-                state={this.state}
-              />
-            ))
-          }
-        </ul>
-        <div>
-          {MovieShow}
+        <div className='genre-div'>
+          <ul className='movie-ul'>
+            <div>
+              <h3 className='genre-title'>Sci-Fi & Fantasy</h3>
+            </div>
+            <div className='movie-lis'>
+              {
+                movies.map(movie => (
+                  <MovieItem
+                    key={movie.id}
+                    movie={movie}
+                    that={this}
+                    state={this.state}
+                  />
+                ))
+              }
+            </div>
+          </ul>
+          <div>
+            {this.MovieShow2}
+          </div>
         </div>
-        
+        <div className='genre-div'>
+          <ul className='movie-ul'>
+            <div>
+              <h3 className='genre-title'>Drama</h3>
+            </div>
+            <div className='movie-lis'>
+              {
+                movies.map(movie => (
+                  <MovieItem
+                    key={movie.id}
+                    movie={movie}
+                    that={this}
+                    state={this.state}
+                  />
+                ))
+              }
+            </div>
+          </ul>
+          <div>
+            {this.MovieShow3}
+          </div>
+        </div>
+        <div className='genre-div'>
+          <ul className='movie-ul'>
+            <div>
+              <h3 className='genre-title'>Critically Acclaimed</h3>
+            </div>
+            <div className='movie-lis'>
+              {
+                movies.map(movie => (
+                  <MovieItem
+                    key={movie.id}
+                    movie={movie}
+                    that={this}
+                    state={this.state}
+                  />
+                ))
+              }
+            </div>
+          </ul>
+          <div>
+            {this.MovieShow4}
+          </div>
+        </div>
       </div>
     );
   }
