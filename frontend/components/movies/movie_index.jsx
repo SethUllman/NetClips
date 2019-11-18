@@ -23,7 +23,7 @@ class movieIndex extends React.Component{
   handlePlay(e) {
     e.preventDefault();
     const movie = this.state.currentMovie;
-    this.props.fetchMovie(currentMovie);
+    this.props.fetchMovie(movie);
   }
 
   render(){
@@ -91,8 +91,14 @@ class movieIndex extends React.Component{
       <div className='movies-index-div'>
         <div className='featured-movie-div'>
           <div className='featured-movie-info'>
-            <div className='movie-title-div'>
-              <h1 className='movie-title'>Sonic</h1>
+            <div className='featured-movie-title-div'>
+              <p className='featured-movie-title'>Sonic the Hedgehog</p>
+            </div>
+            <div className='featured-movie-buttons-div'>
+              <button
+                className='featured-play-btn'
+                onClick={console.log('play!!!')}>Play</button>
+              <button className='featured-add-list'>+My List</button>
             </div>
           </div>
           <ReactPlayer 

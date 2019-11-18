@@ -1,17 +1,17 @@
 
 .movies-index-div {
   background-color: #131313;
-  height: 180vh;
+  background-size: cover;
 }
 
 .movie-lis {
   // border: 3px solid red;
   display: flex;
-  padding: 0 55px 20px;
+  padding: 0 0 40px 50px;
 }
 
 .movie-li {
-  // border: 3px solid red;
+  border: 3px solid red;
   flex: 0 0 19.7%;
   text-align: center;
   margin: 0 2px;
@@ -143,7 +143,7 @@
 
 .movie-title {
   font-size: 3vw;
-  // font-size: calc(px + (36px - 8px) * ((100vw - 3vw) / (3vw - 3vw)));
+  
   // position: absolute;
 }
 
@@ -225,7 +225,7 @@
 }
 
 .featured-movie-div {
-  border: 3px solid blue;
+  // border: 3px solid blue;
   height: 55vw;
   pointer-events: none;
   display: flex;
@@ -234,17 +234,64 @@
 
 .featured-movie {
   position: relative;
-  border: 3px solid green;
+  // border: 3px solid green;
 }
 
 .featured-movie-info {
-  border: 3px solid blue; 
+  // border: 3px solid blue; 
   position: absolute;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 30vw;
-  height: 40vw;
+  height: 30vw;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
  
   z-index: 1;
+}
+
+.featured-movie-title-div {
+  display: flex;
+  justify-content: center;
+  // border: 3px solid red;
+  height: 15vw;
+  width: 80%;
+}
+
+.featured-movie-title {
+  font-size: 6vw;
+}
+
+.featured-movie-buttons-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+.featured-play-btn {
+  display: flex;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(169, 169, 169, 0.3);
+  width: 9vw;
+  height: 3vw;
+  border-radius: 1px;
+  font-size: 2vw;
+  padding-right: 6px;
+  background-clip: content-box;
+}
+
+.featured-add-list {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(160, 169, 169, 0.3);
+  border-radius: 1px;
+  font-size: 2vw;
+  width: 11vw;
+  height: 3vw;
 }
 
 .genre-title {
