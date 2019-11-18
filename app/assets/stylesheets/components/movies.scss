@@ -2,6 +2,7 @@
 .movies-index-div {
   background-color: #131313;
   background-size: cover;
+  overflow-x: hidden;
 }
 
 .movie-lis {
@@ -11,7 +12,7 @@
 }
 
 .movie-li {
-  border: 3px solid red;
+  // border: 3px solid red;
   flex: 0 0 19.7%;
   text-align: center;
   margin: 0 2px;
