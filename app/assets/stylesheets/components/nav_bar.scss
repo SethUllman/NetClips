@@ -5,17 +5,20 @@
 
 .nav-bar {
   display: flex;
+  position: sticky;
+  width: 100%;
+  top: 0;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 40px;
-  background-color: black;
+  background-image: linear-gradient( to bottom, #060606, #131313);
   background-clip: content-box;
 }
 
 .logo {
   font-family: BebasNeue;
   font-size: 40px;
-  color: #e51413;
+  color: #e50814;
+  text-shadow: 0px 0px 1px #8a0a11;
   padding-left: 25px;
   padding-right: 20px;
 }

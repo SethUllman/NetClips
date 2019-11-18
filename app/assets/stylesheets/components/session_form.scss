@@ -10,6 +10,8 @@ html {
 }
 
 .session-form {
+  // background-image: url('https://backgrounddownload.com/wp-content/uploads/2018/09/background-netflix-5.jpg');
+
   background: rgba(0, 0, 0, 0.8);
   border-radius: 3px;
   display: flex;
@@ -17,6 +19,8 @@ html {
   width: 450px;
   height: 600px;
   margin: 0 auto;
+  padding-top: 40px;
+  background-clip: content-box;
 }
 
 .signin-header {

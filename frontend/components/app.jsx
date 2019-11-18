@@ -17,10 +17,11 @@ export default () => (
   <div className="whole-page"> 
     <NavBarContainer/>
     <Switch>
+      {/* <AuthRoute path='/' component={NavBarContainer}/> */}
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
-      {/* <ProtectedRoute path="/movies" component={MoviesIndexContainer} /> */}
-      <ProtectedRoute path="/movies" component={MoviesShowContainer} />
+      <ProtectedRoute path="/movies" component={MoviesIndexContainer} />
+      <ProtectedRoute path="/movies/movieId" component={MoviesShowContainer} />
       <RootRoute exact path="/" />
     </Switch>
   </div>
