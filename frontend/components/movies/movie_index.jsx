@@ -99,7 +99,7 @@ class movieIndex extends React.Component{
         <div className='featured-movie-div'>
           <div className='featured-movie-info'>
             <div className='featured-movie-title-div'>
-              <p className='featured-movie-title'>Sonic the Hedgehog</p>
+              <div className='featured-movie-title'></div>
             </div>
             <div className='featured-movie-buttons-div'>
               <button
@@ -110,7 +110,8 @@ class movieIndex extends React.Component{
           </div>
           <ReactPlayer 
             className='featured-movie'
-            url='https://www.youtube.com/watch?v=SXDa8i75PpM'
+            // url='https://www.youtube.com/watch?v=SXDa8i75PpM'
+            url='https://vimeo.com/372833024'
             playing={true}
             controls={false}
             width={'100%'}

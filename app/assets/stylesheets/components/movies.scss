@@ -9,11 +9,12 @@
 .movie-lis {
   // border: 3px solid red;
   display: flex;
-  padding: 0 0 40px 50px;
+  justify-content: space-evenly;
+  padding: 0 25px 40px 25px;
 }
 
 .movie-li {
-  flex: 0 0 19.7%;
+  // flex: 0 0 20%;
   text-align: center;
   margin: 0 2px;
   transition: transform 300ms ease 100ms;
@@ -227,7 +228,6 @@
 .featured-movie-div {
   // border: 3px solid blue;
   height: 55vw;
-  pointer-events: none;
   display: flex;
   align-items: flex-end;
   position: relative;
@@ -258,10 +258,17 @@
   // border: 3px solid red;
   height: 15vw;
   width: 80%;
+  // background-image: url('https://i.redd.it/v514dq4oehe21.png');
 }
 
 .featured-movie-title {
+  // border: 3px solid green;
+  width: 34vw;
   font-size: 6vw;
+  background-image: url('https://i.redd.it/v514dq4oehe21.png');
+  background-size: cover;
+  background-position: center;
+  background-size: 50vw 30vw;
 }
 
 .featured-movie-buttons-div {
@@ -279,10 +286,17 @@
   background-color: rgba(169, 169, 169, 0.3);
   width: 9vw;
   height: 3vw;
-  border-radius: 1px;
+  border-radius: 3px;
   font-size: 2vw;
   padding-right: 6px;
   background-clip: content-box;
+}
+
+.featured-play-btn:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.03,1.03);
+  transition: transform 100ms;
 }
 
 .featured-add-list {
@@ -293,6 +307,13 @@
   font-size: 2vw;
   width: 11vw;
   height: 3vw;
+}
+
+.featured-add-list:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.03,1.03);
+  transition: transform 100ms;
 }
 
 .genre-title {
