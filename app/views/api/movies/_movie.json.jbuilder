@@ -1,1 +1,1 @@
-json.extract! movie, :id, :title, :title , :year, :seasons, :director, :cast, :writers, :genres, :maturity_rating, :description, :likes
+json.extract! movie, :id, :title, :title , :year, :seasons, :director, :cast, :writers, :genres, :maturity_rating, :description, :likes, :image_url, :video_url

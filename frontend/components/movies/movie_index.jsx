@@ -27,13 +27,18 @@ class movieIndex extends React.Component{
   }
 
   render(){
+
+    const dropStyle = this.state.currentMovie ? ({
+      backgroundImage: `url(${this.state.currentMovie.image_url})`
+    } ) : null;
     
     const { movies } = this.props;
     this.MovieShow1 = (this.state.showResults) ? (
+      
       <div className='drop-content'>
         <div className='drop-background'>
           <div className='left'></div>
-          <div className='right'></div>
+          <div className='right' style={dropStyle}></div>
         </div>
         <div className='drop-content-container'>
           <div className='movie-title-div'>

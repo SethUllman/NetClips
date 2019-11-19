@@ -2,6 +2,7 @@
 .movies-index-div {
   background-color: #131313;
   background-size: cover;
+  height: 120vh;
   overflow-x: hidden;
 }
 
@@ -12,7 +13,6 @@
 }
 
 .movie-li {
-  // border: 3px solid red;
   flex: 0 0 19.7%;
   text-align: center;
   margin: 0 2px;
@@ -21,7 +21,6 @@
   max-width: 230px;
   height: 10vw;
   max-height: 130px;
-  background-image: url('https://i.pinimg.com/originals/98/52/80/985280b8d9904fd52d83b17433694a7a.jpg');
   background-size: cover;
   position: relative;
 }
@@ -111,7 +110,7 @@
 }
 
 .right {
-  background-image: url('https://i.pinimg.com/originals/98/52/80/985280b8d9904fd52d83b17433694a7a.jpg');
+  // background-image: url('https://i.pinimg.com/originals/98/52/80/985280b8d9904fd52d83b17433694a7a.jpg');
   background-size: cover;
   width: 70%;
 }
