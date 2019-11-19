@@ -29,7 +29,9 @@ class movieIndex extends React.Component{
   render(){
 
     const dropStyle = this.state.currentMovie ? ({
-      backgroundImage: `url(${this.state.currentMovie.image_url})`
+      backgroundImage: `url(${this.state.currentMovie.image_url})`,
+      backgroundSize: 'cover',
+      width: '70%'
     } ) : null;
     
     const { movies } = this.props;
