@@ -14,7 +14,7 @@ class movieIndex extends React.Component{
     this.state = {
       movies: this.props.movies,
       showResults: false,
-      currentMovie: null,
+      currentMovie: this.props.movies[0]
     }
     this.handlePlay = this.handlePlay.bind(this);
   }
@@ -45,7 +45,7 @@ class movieIndex extends React.Component{
           <div className='right' style={dropStyle}>
             <div className='right-X' onClick={() => {
               return (
-                this.setState({ showResults: false, currentMovie: null })
+                this.setState({ showResults: false, currentMovie: this.props.movies[0] })
               )
             }}>X</div>
           </div>
@@ -105,6 +105,7 @@ class movieIndex extends React.Component{
     const featureMovie = <ReactPlayer
       id='featured-movie-id'
       className='featured-movie'
+      // url={this.state.currentMovie.movie_url}
       url='https://vimeo.com/372833024'
       playing={true}
       controls={false}
@@ -126,7 +127,7 @@ class movieIndex extends React.Component{
               <div className='featured-movie-buttons'>
                 <button
                   className='featured-play-btn'
-                  onClick={console.log('play!!!')}>Play</button>
+                  onClick={ this.handlePlay }>Play</button>
                 <button className='featured-add-list'>+My List</button>
               </div>
               
