@@ -8,7 +8,7 @@
 demo_user = User.new(email: 'demo@email.com', password: 'demo@email.com')
 
 #Featured Movie
-sonic = Movie.new(title: 'Sonic the Hedghog', year: 2020, director: 'Jeff Fowler', cast: 'Jim Carrey, Ben Schwartz, Javes Marsden', writers: 'Josh Miller, Patrick Casey, Oren Uziel', genres: '', maturity_rating: 'PG', description: 'A cop in the rural town of Green Hills will help Sonic escape from the government who is looking to capture him.', liks: 0, image_url: 'no-image', video_url: 'https://vimeo.com/372833024')
+sonic = Movie.new(title: 'Sonic the Hedghog', year: 2020, director: 'Jeff Fowler', cast: 'Jim Carrey, Ben Schwartz, Javes Marsden', writers: 'Josh Miller, Patrick Casey, Oren Uziel', genres: '', maturity_rating: 'PG', description: 'A cop in the rural town of Green Hills will help Sonic escape from the government who is looking to capture him.', likes: 0, image_url: 'no-image', video_url: 'https://vimeo.com/372833024')
 
 #Critically Acclaimed
 
@@ -27,7 +27,7 @@ boyhood = Movie.new(title: 'Boyhood', year: 2014, director: 'Richard Linklater',
 #Drama
 fifty = Movie.new(title: '50/50', year: 2011, director: 'Jonathan Levine', cast: 'Joseph Gordon-Levitt, Seth Rogen, Anna Kendrick', writers: 'Jonathan Levine', genres: 'Drama', maturity_rating: 'R', description: 'Inspired by a true story, a comedy centered on a 27-year-old guy who learns of his cancer diagnosis and his subsequent struggle to beat the disease.', likes: 0, image_url: 'https://occ-0-999-1009.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABfKPL4TtYeGCNrpDKb6EkX7Z3Us78Vqm03YIt83GQo8uUVhKckMmAEtBQIEVt5LCtzY0psEWEKvN_aseZYee1Ev4wdI5aQHKI4jsRYGwhKMahfUSzaXtfzUW2Z0ceTtqlmWgabD5Rzs.jpg', video_url: 'https://vimeo.com/29918959')
 
-theory = Movie.new(title: 'The Theory of Everything', year: 2014, director: 'James Marsh', cast: 'Eddie Redmayne, Felicity Jones, Tom Prior', writers: 'Anthony McCarten, Jane Hawking', genres: 'Drama', maturity_rating: 'PG-13', description: 'A look at the relationship between the famous physicist Stephen Hawking and his wife.', likes: 0, image_url: 'https://www.flixwatch.co/wp-content/uploads/80000644.jpghttps://www.flixwatch.co/wp-content/uploads/80000644.jpg', video_url: 'https://vimeo.com/106079128')
+theory = Movie.new(title: 'The Theory of Everything', year: 2014, director: 'James Marsh', cast: 'Eddie Redmayne, Felicity Jones, Tom Prior', writers: 'Anthony McCarten, Jane Hawking', genres: 'Drama', maturity_rating: 'PG-13', description: 'A look at the relationship between the famous physicist Stephen Hawking and his wife.', likes: 0, image_url: 'https://www.flixwatch.co/wp-content/uploads/80000644.jpg', video_url: 'https://vimeo.com/106079128')
 
 pursuit = Movie.new(title: 'The Pursuit of Happyness', year: 2006, director: 'Gabriele Muccino', cast: 'Will Smith, Thandie Newton, Jaden Smith', writers: 'Steve Conrad', genres: 'Drama', maturity_rating: 'PG-13', description: "A struggling salesman takes custody of his son as he's poised to begin a life-changing professional career.", likes: 0, image_url: 'https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/sphe-pursuit_of_happyness_2006-Full-Image_GalleryCover-en-US-1484001256987._UY500_UX667_RI_VLlDKyg2xplhPOpi73ReetPsQLmrUs3aG_TTW_.jpg', video_url: 'https://vimeo.com/327705745')
 
@@ -64,6 +64,8 @@ arrested_development = Movie.new(title: 'Arrested Development', year: 2003, dire
 good_place = Movie.new(title: 'The Good Place', year: 2016, director: 'Dean Holland', cast: 'Kristen Bell, William Jaskson Harper', writers:'Michael Schur, Andrew Law', genres: 'TV Comedy', maturity_rating: 'TV-PG', description: 'Four people and their otherworldly frienemy struggle in the afterlife to define what it means to be good.', likes: 0, image_url: 'https://cdn.onebauer.media/one/media/5cc6/f4fb/388b/db6b/69b4/54d5/the-good-place-season-four.jpg?format=jpg&quality=50&width=960&height=540&ratio=16-9&resize=aspectfill', video_url: 'https://vimeo.com/199924869')
 
 #Movie Object Saves
+sonic.save
+
 boyhood.save
 informant.save
 rain.save

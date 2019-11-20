@@ -14,9 +14,10 @@ class movieIndex extends React.Component{
     this.state = {
       movies: this.props.movies,
       showResults: false,
-      currentMovie: this.props.movies[0]
+      currentMovie: null
     }
     this.handlePlay = this.handlePlay.bind(this);
+    this.PlayFeatured = this.PlayFeatured.bind(this);
   }
 
   componentDidMount() {
@@ -29,23 +30,33 @@ class movieIndex extends React.Component{
     this.props.history.push(`/movies/${movie.id}`);
   }
 
+  PlayFeatured() {
+    const movie = this.props.movies[0];
+    this.props.history.push(`/movies/${movie.id}`);
+  }
+
   render(){
-    const tv_comedy = this.props.movies.filter( (movie) => {
+    let tv_comedy1 = this.props.movies.filter( (movie) => {
       return movie.genres === 'TV Comedy';
     });
 
-    const sci_fi = this.props.movies.filter( (movie) => {
+    let sci_fi1 = this.props.movies.filter( (movie) => {
       // debugger;
       return movie.genres === 'Sci-Fi & Fantasy';
     });
 
-    const drama = this.props.movies.filter((movie) => {
+    let drama1 = this.props.movies.filter((movie) => {
       return movie.genres === 'Drama';
     });
 
-    const acclaimed = this.props.movies.filter((movie) => {
+    let acclaimed1 = this.props.movies.filter((movie) => {
       return movie.genres === 'Critically Acclaimed';
     });
+
+    let tv_comedy = tv_comedy1.splice(0, 6);
+    let sci_fi = sci_fi1.splice(0, 6);
+    let drama = drama1.splice(0, 6);
+    let acclaimed = acclaimed1.splice(0, 6);
 
 
     const dropStyle = this.state.currentMovie ? ({
@@ -111,13 +122,13 @@ class movieIndex extends React.Component{
     if (this.state.showResults){
       if (this.state.currentMovie.genres === ('Sci-Fi & Fantasy')) {
         this.MovieShow2 = this.MovieShow1;
-        this.MovieShow1 = <div></div>;
+        // this.MovieShow1 = <div></div>;
       } else if(this.state.currentMovie.genres === ('Drama')) {
         this.MovieShow3 = this.MovieShow1;
-        this.MovieShow1 = <div></div>
+        // this.MovieShow1 = <div></div>
       } else if(this.state.currentMovie.genres === ('Critically Acclaimed')) {
         this.MovieShow4 = this.MovieShow1;
-        this.MovieShow1 = <div></div>
+        // this.MovieShow1 = <div></div>
       }
     }
     const featureMovie = <ReactPlayer
@@ -145,7 +156,7 @@ class movieIndex extends React.Component{
               <div className='featured-movie-buttons'>
                 <button
                   className='featured-play-btn'
-                  onClick={ this.handlePlay }>Play</button>
+                  onClick={ this.PlayFeatured }>Play</button>
                 <button className='featured-add-list'>+My List</button>
               </div>
               
