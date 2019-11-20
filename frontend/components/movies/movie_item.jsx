@@ -6,7 +6,7 @@ let MovieItem = ({ movie, that}) => {
     backgroundSize: 'cover',
     position: 'relative'
   }
-  // debugger;
+ 
   return (
     <li key={movie.id} className='movie-li'>
       <div className='movie-li-content' style={liStyle}>

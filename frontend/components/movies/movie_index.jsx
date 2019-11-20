@@ -1,6 +1,8 @@
 import React from 'react';
 import {MovieItem} from './movie_item.jsx';
 import ReactPlayer from 'react-player';
+// import { Redirect } from 'react-router-dom';
+
 // import MoviePlayer from './movie_player.jsx';
 // import YouTube from 'react-youtube';
 
@@ -14,6 +16,7 @@ class movieIndex extends React.Component{
       showResults: false,
       currentMovie: null,
     }
+    this.handlePlay = this.handlePlay.bind(this);
   }
 
   componentDidMount() {
@@ -22,12 +25,14 @@ class movieIndex extends React.Component{
 
   handlePlay(e) {
     e.preventDefault();
+    // debugger;
     const movie = this.state.currentMovie;
-    this.props.fetchMovie(movie);
+    // this.props.fetchMovie(this.state.currentMovie);
+    // <Redirect to={`/${movie.id}`}/>
+    this.props.history.push(`/movies/${movie.id}`);
   }
 
   render(){
-
     const dropStyle = this.state.currentMovie ? ({
       backgroundImage: `url(${this.state.currentMovie.image_url})`,
       backgroundSize: 'cover',
@@ -40,7 +45,13 @@ class movieIndex extends React.Component{
       <div className='drop-content'>
         <div className='drop-background'>
           <div className='left'></div>
-          <div className='right' style={dropStyle}></div>
+          <div className='right' style={dropStyle}>
+            <div className='right-X' onClick={() => {
+              return (
+                this.setState({ showResults: false, currentMovie: null })
+              )
+            }}>X</div>
+          </div>
         </div>
         <div className='drop-content-container'>
           <div className='movie-title-div'>
@@ -55,10 +66,14 @@ class movieIndex extends React.Component{
             <p className='movie-description'>{this.state.currentMovie.description}</p>
           </div>
           <div className='movie-buttons-div'>
+
+ {/* ------------------------------- */}
             <button 
               className='play-btn'
               onClick={this.handlePlay}>PLAY</button>
-            <button className='add-list'>+MY LIST</button>
+{/* ------------------------------- */}
+
+            <button className='add-list'>+ MY LIST</button>
           </div>
           <div className='movie-starring-div'>
             <div className='movie-starring'>
@@ -90,9 +105,18 @@ class movieIndex extends React.Component{
         this.MovieShow1 = <div></div>
       }
     }
-
-    
-    
+    const featureMovie = <ReactPlayer
+      id='featured-movie-id'
+      className='featured-movie'
+      url='https://vimeo.com/372833024'
+      playing={true}
+      controls={false}
+      width={'100%'}
+      height={'55vw'}
+      loop={true}
+      volume={0}
+      muted={true}
+    />
 
     return (
       <div className='movies-index-div'>
@@ -102,24 +126,20 @@ class movieIndex extends React.Component{
               <div className='featured-movie-title'></div>
             </div>
             <div className='featured-movie-buttons-div'>
-              <button
-                className='featured-play-btn'
-                onClick={console.log('play!!!')}>Play</button>
-              <button className='featured-add-list'>+My List</button>
+              <div className='featured-movie-buttons'>
+                <button
+                  className='featured-play-btn'
+                  onClick={console.log('play!!!')}>Play</button>
+                <button className='featured-add-list'>+My List</button>
+              </div>
+              
             </div>
           </div>
-          <ReactPlayer 
-            className='featured-movie'
-            // url='https://www.youtube.com/watch?v=SXDa8i75PpM'
-            url='https://vimeo.com/372833024'
-            playing={true}
-            controls={false}
-            width={'100%'}
-            height={'55vw'}
-            loop={true}
-            volume={0}
-            muted={true}
-          />
+          <div className='featured-rating-div'>
+            <p className='featured-rating'>PG</p>
+          </div>
+          
+          {featureMovie}
         </div>
         <div className='genre-div'>
           

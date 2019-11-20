@@ -39,40 +39,41 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="session-form">
-        
-        <form>
-          <h2 className='signin-header'>Sign In</h2>
-          <div className='email-div'>
-            <input
-                className='email-input'
-                type="text"
-                value={this.state.email}
-                placeholder='Email'
-                onChange={this.handleInput('email')}
-              />
+      <div className="session-form-div">
+        <div className='session-form'>
+          <form>
+            <h2 className='signin-header'>Sign In</h2>
+            <div className='email-div'>
+              <input
+                  className='email-input'
+                  type="text"
+                  value={this.state.email}
+                  placeholder='Email'
+                  onChange={this.handleInput('email')}
+                />
+            </div>
+            
+            <div className='password-div'>
+              <input
+                  className='password-input'
+                  type="password"
+                  value={this.state.password}
+                  placeholder='Password'
+                  onChange={this.handleInput('password')}
+                />
+            </div>
+            {this.renderErrors()}
+            <div className='button-div'>
+              <button className='submit-button' onClick={this.handleSubmit}>Sign In</button>
+            </div>
+            
+          </form>
+            <p className="signup-btn" >
+              <span>New to NetClips? </span><Link id='signup-link' to="/signup" onClick={() => {
+                this.setState(this.state)
+              }}> Sign up now</Link> .
+            </p>
           </div>
-          
-          <div className='password-div'>
-            <input
-                className='password-input'
-                type="password"
-                value={this.state.password}
-                placeholder='Password'
-                onChange={this.handleInput('password')}
-              />
-          </div>
-          {this.renderErrors()}
-          <div className='button-div'>
-            <button className='submit-button' onClick={this.handleSubmit}>Sign In</button>
-          </div>
-          
-        </form>
-          <p className="signup-btn" >
-            <span>New to NetClips? </span><Link id='signup-link' to="/signup" onClick={() => {
-              this.setState(this.state)
-            }}> Sign up now</Link> .
-          </p>
       </div>
     );
   }

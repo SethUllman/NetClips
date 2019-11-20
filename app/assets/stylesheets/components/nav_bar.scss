@@ -48,3 +48,14 @@
   font-family: arial;
   padding: 0 25px 0 0;
 }
+
+.search-bar {
+  // border: 3px solid yellow;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.search-header {
+  display: flex;
+  flex-direction: row;
+}

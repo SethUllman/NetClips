@@ -82,41 +82,41 @@ class Signup extends React.Component{
 
   render() {
     return (
-      <div className="session-form">
-
-        <form>
-          <h2 className='signin-header'>Sign Up</h2>
-          
-          <div className='email-div'>
-            <input
-              className='email-input'
-              type="text"
-              value={this.state.email}
-              placeholder='Email'
-              onChange={this.handleInput('email')}
-            />
-          </div>
-          <div className='password-div'>
-            <input
-              className='password-input'
-              type="password"
-              value={this.state.password}
-              placeholder='Password'
-              onChange={this.handleInput('password')}
-            />
-          </div>
-          {this.renderErrors()}
-          <div className='button-div'>
-            <button className='submit-button' onClick={this.handleSubmit}>Sign Up</button>
-          </div>
-          <div className='button-div'>
-            <button id='demo-login' className='submit-button' onClick={this.startInterval}>Demo Login</button>
-          </div>
-          <p className="signup-btn" >
-            Have an account? <Link id='signup-link' to="/login">Sign In</Link> .
-          </p>
-        </form>
-
+      <div className="session-form-div">
+        <div className="session-form">
+          <form>
+            <h2 className='signin-header'>Sign Up</h2>
+            
+            <div className='email-div'>
+              <input
+                className='email-input'
+                type="text"
+                value={this.state.email}
+                placeholder='Email'
+                onChange={this.handleInput('email')}
+              />
+            </div>
+            <div className='password-div'>
+              <input
+                className='password-input'
+                type="password"
+                value={this.state.password}
+                placeholder='Password'
+                onChange={this.handleInput('password')}
+              />
+            </div>
+            {this.renderErrors()}
+            <div className='button-div'>
+              <button className='submit-button' onClick={this.handleSubmit}>Sign Up</button>
+            </div>
+            <div className='button-div'>
+              <button id='demo-login' className='submit-button' onClick={this.startInterval}>Demo Login</button>
+            </div>
+            <p className="signup-btn" >
+              Have an account? <Link id='signup-link' to="/login">Sign In</Link> .
+            </p>
+          </form>
+        </div>
       </div>
     );
   }

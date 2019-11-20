@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import movieIndex from './movie_index';
 import { fetchMovies, fetchMovie } from '../../actions/movie_actions';
+import { withRouter } from 'react-router-dom';
 
 import React from 'react';
 
@@ -17,4 +18,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(movieIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(movieIndex));

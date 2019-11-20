@@ -1,0 +1,16 @@
+.movie-show-div {
+  // border: 3px solid red;
+  background-color: #131313;
+  background-size: cover;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  top: 0;
+}
+
+.movie-show {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+}

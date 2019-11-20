@@ -1,16 +1,18 @@
 
 .movies-index-div {
+  // border: 3px solid red;
   background-color: #131313;
   background-size: cover;
-  height: 120vh;
+  height: 110vh;
   overflow-x: hidden;
+  // overflow-y: hidden;
 }
 
 .movie-lis {
   // border: 3px solid red;
   display: flex;
   justify-content: space-evenly;
-  padding: 0 25px 40px 25px;
+  padding: 0 5px 40px 5px;
 }
 
 .movie-li {
@@ -18,10 +20,10 @@
   text-align: center;
   margin: 0 2px;
   transition: transform 300ms ease 100ms;
-  width: 15vw;
-  max-width: 230px;
+  width: 16vw;
+  // max-width: 230px;
   height: 10vw;
-  max-height: 130px;
+  // max-height: 130px;
   background-size: cover;
   position: relative;
 }
@@ -83,7 +85,7 @@
 
 .drop-content {
   height: 42vw;
-  max-height: 545px;
+  // max-height: 545px;
   // margin-top: 30px;
   position: relative;
 }
@@ -114,6 +116,26 @@
   // background-image: url('https://i.pinimg.com/originals/98/52/80/985280b8d9904fd52d83b17433694a7a.jpg');
   background-size: cover;
   width: 70%;
+  // border: 3px solid red;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.right-X {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 3vw;
+  color: white;
+  // border: 3px solid yellow;
+  width: 6vw;
+  height: 6vw;
+}
+
+.right-X:hover {
+  cursor: pointer;
 }
 
 .drop-content-container {
@@ -181,11 +203,17 @@
   padding-left: 5px;
   padding-right: 5px;
   background-color: red;
-  width: 6vw;
+  width: 7vw;
   border-radius: 1px;
   font-size: 1.5vw;
   padding-right: 6px;
   background-clip: content-box;
+}
+
+.play-btn:hover {
+  background-color: #ff3635;
+  transform: scale(1.03,1.03);
+  transition: transform 100ms;
 }
 
 .add-list {
@@ -194,7 +222,14 @@
   border: 1px solid white;
   border-radius: 1px;
   font-size: 1.5vw;
-  width: 8vw;
+  width: 9vw;
+}
+
+.add-list:hover {
+  background-color: rgba(30, 30, 30, 0.2);
+  transform: scale(1.03,1.03);
+  transition: transform 100ms;
+  border: 1px solid white;
 }
 
 .movie-starring-div {
@@ -272,6 +307,14 @@
 }
 
 .featured-movie-buttons-div {
+  // border: 3px solid blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.featured-movie-buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -316,6 +359,25 @@
   transition: transform 100ms;
 }
 
+.featured-rating-div {
+  border-left: 3px solid white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(160, 169, 169, 0.3);
+  color: white;
+  border-radius: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.75vw;
+  width: 8vw;
+  height: 3vw;
+  padding-left: 5px;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 10vw;
+}
+
 .genre-title {
   // border: 3px solid green;
   color: white;
@@ -329,4 +391,10 @@
   display: flex;
   flex-direction: column;
   align-content: flex-start;
+}
+
+.movie-show {
+  border: 3px solid blue;
+  width: 30px;
+  height: 30px;
 }

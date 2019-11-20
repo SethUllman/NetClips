@@ -1,17 +1,20 @@
 import { connect } from 'react-redux';
 import movieShow from './movie_show';
-import { fetchMovie } from '../../actions/movie_actions';
+import { fetchMovie, fetchMovies } from '../../actions/movie_actions';
 import React from 'react';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+  
   return {
-    movie: state.movie
+    movie: state.movies[ownProps.match.params.movieId]
   }
 }
 
 const mapDispatchToProps = dispatch => {
+
   return {
-    fetchMovie: (movieId) => dispatch(fetchMovie(movieId))
+    fetchMovie: (movie) => dispatch(fetchMovie(movie)),
+    fetchMovies: () => dispatch(fetchMovies())
   }
 }
 

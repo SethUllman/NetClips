@@ -19,9 +19,19 @@ const display = currentUser ? (
     </div>
   );
   const logoutBtn = currentUser ? (
-    <div className='logout-btn'>
-        <button onClick={logout}>Logout</button>
-      </div>
+    <ul className='search-header'>
+      <li>
+        <label className='search-bar'>
+          Search
+          <input type="text"/>
+        </label>
+      </li>
+      <li>
+        <div className='logout-btn'>
+            <button onClick={logout}>Logout</button>
+        </div>
+      </li>
+    </ul>
   ) : (
     <div></div>
   )

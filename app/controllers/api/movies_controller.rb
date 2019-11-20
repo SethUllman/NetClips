@@ -5,13 +5,13 @@ class Api::MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find_by(params[:id])
+    @movie = Movie.find(params[:id])
   end
 
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :genre)
+    params.require(:movie).permit(:id, :title, :genre)
   end
 
 end

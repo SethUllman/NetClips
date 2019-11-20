@@ -3,15 +3,22 @@ html {
 }
 
 .whole-page {
-  background-image: url('https://backgrounddownload.com/wp-content/uploads/2018/09/background-netflix-5.jpg');
-  // background-image: url('https://lh3.googleusercontent.com/OBM4v1RG04WMKeGL-FLxff_cGkfICdMP_E3TeisW2GN1QHx7HmtnMLwGfzwN8ta2SXQlt38=s151');
+  // background-image: url('https://backgrounddownload.com/wp-content/uploads/2018/09/background-netflix-5.jpg');
+  background-color: #131313;
   background-size: cover;
-  min-height: 1125px;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.session-form-div {
+  background-image: url('https://backgrounddownload.com/wp-content/uploads/2018/09/background-netflix-5.jpg');
+  background-size: cover;
+  z-index: 1;
+  min-height: 125vh;
+  overflow-y: hidden;
 }
 
 .session-form {
-  // background-image: url('https://backgrounddownload.com/wp-content/uploads/2018/09/background-netflix-5.jpg');
-
   background: rgba(0, 0, 0, 0.8);
   border-radius: 3px;
   display: flex;
