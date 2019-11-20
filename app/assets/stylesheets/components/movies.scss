@@ -1,9 +1,10 @@
 
 .movies-index-div {
   // border: 3px solid red;
+  position: relative;
   background-color: #131313;
   background-size: cover;
-  height: 110vh;
+  height: 120vh;
   overflow-x: hidden;
   // overflow-y: hidden;
 }
@@ -391,10 +392,4 @@
   display: flex;
   flex-direction: column;
   align-content: flex-start;
-}
-
-.movie-show {
-  border: 3px solid blue;
-  width: 30px;
-  height: 30px;
 }

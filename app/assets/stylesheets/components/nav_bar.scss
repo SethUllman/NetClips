@@ -5,7 +5,8 @@
 
 .nav-bar {
   display: flex;
-  position: sticky;
+  position: fixed;
+  // position: absolute;
   width: 100%;
   top: 0;
   justify-content: space-between;

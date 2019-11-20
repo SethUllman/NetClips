@@ -33,6 +33,9 @@ class MovieShow extends React.Component{
           volume={0.7}
           muted={false}
         />
+        <div className='movie-show-back'>
+          Back
+        </div>
       </div>
     );
   }
