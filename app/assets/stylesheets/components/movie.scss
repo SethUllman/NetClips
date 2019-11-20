@@ -13,17 +13,31 @@
 }
 
 .movie-show {
-  border: 3px solid blue;
-  position: relative;
-  z-index: 10;
+  // border: 3px solid blue;
+  // position: relative;
+  z-index: 3;
   height: 100%;
   width: 100%;
 }
 
 .movie-show-back {
-  border: 3px solid yellow;
-  z-index: 10;
+  display: flex;
   position: absolute;
-  width: 30px;
-  height: 30px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 4vw;
+  z-index: 10;
+  width: 8vw;
+  height: 8vw;
+  top: 3vh;
+  left: 3vw;
+  opacity: 0.1;
+}
+
+.movie-show-back:hover {
+  transform: scale(1.2,1.2);
+  transition: transform 100ms ease 100ms;
+  cursor: pointer;
+  opacity: 1;
 }

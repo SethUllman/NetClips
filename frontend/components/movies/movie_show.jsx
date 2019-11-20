@@ -1,21 +1,27 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom'
-import ReactPlayer from 'react-player'
+import { Redirect } from 'react-router-dom';
+import ReactPlayer from 'react-player';
+import { FaArrowLeft } from 'react-icons/fa';
 
 class MovieShow extends React.Component{
   constructor(props) {
     super(props);
+    this.handleBack = this.handleBack.bind(this);
   }
+  
 
   componentDidMount() {
     let movie = { id: this.props.match.params.movieId };
     this.props.fetchMovie(movie);
   }
 
+  handleBack() {
+    this.props.history.push(`/movies`);
+  }
+
   render() {
     console.log(this.props);
     const {movie} = this.props;
-    debugger;
     if (!movie) {
       return null;
     }
@@ -33,8 +39,8 @@ class MovieShow extends React.Component{
           volume={0.7}
           muted={false}
         />
-        <div className='movie-show-back'>
-          Back
+        <div className='movie-show-back' onClick={this.handleBack}>
+          <FaArrowLeft/>
         </div>
       </div>
     );

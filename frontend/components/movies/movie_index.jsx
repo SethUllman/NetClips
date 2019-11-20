@@ -25,10 +25,7 @@ class movieIndex extends React.Component{
 
   handlePlay(e) {
     e.preventDefault();
-    // debugger;
     const movie = this.state.currentMovie;
-    // this.props.fetchMovie(this.state.currentMovie);
-    // <Redirect to={`/${movie.id}`}/>
     this.props.history.push(`/movies/${movie.id}`);
   }
 
