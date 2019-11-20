@@ -30,6 +30,24 @@ class movieIndex extends React.Component{
   }
 
   render(){
+    const tv_comedy = this.props.movies.filter( (movie) => {
+      return movie.genres === 'TV Comedy';
+    });
+
+    const sci_fi = this.props.movies.filter( (movie) => {
+      // debugger;
+      return movie.genres === 'Sci-Fi & Fantasy';
+    });
+
+    const drama = this.props.movies.filter((movie) => {
+      return movie.genres === 'Drama';
+    });
+
+    const acclaimed = this.props.movies.filter((movie) => {
+      return movie.genres === 'Critically Acclaimed';
+    });
+
+
     const dropStyle = this.state.currentMovie ? ({
       backgroundImage: `url(${this.state.currentMovie.image_url})`,
       backgroundSize: 'cover',
@@ -147,7 +165,7 @@ class movieIndex extends React.Component{
             </div>
             <div className='movie-lis'>
             {
-              movies.map( movie => (
+              tv_comedy.map( movie => (
                 <MovieItem
                 key={movie.id}
                 movie={movie}
@@ -169,7 +187,7 @@ class movieIndex extends React.Component{
             </div>
             <div className='movie-lis'>
               {
-                movies.map(movie => (
+                sci_fi.map(movie => (
                   <MovieItem
                     key={movie.id}
                     movie={movie}
@@ -191,7 +209,7 @@ class movieIndex extends React.Component{
             </div>
             <div className='movie-lis'>
               {
-                movies.map(movie => (
+                drama.map(movie => (
                   <MovieItem
                     key={movie.id}
                     movie={movie}
@@ -213,7 +231,7 @@ class movieIndex extends React.Component{
             </div>
             <div className='movie-lis'>
               {
-                movies.map(movie => (
+                acclaimed.map(movie => (
                   <MovieItem
                     key={movie.id}
                     movie={movie}
