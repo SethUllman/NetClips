@@ -1,9 +1,11 @@
 import React from 'react';
+import { FaChevronDown } from 'react-icons/fa';
 let MovieItem = ({ movie, that}) => {
   
   const liStyle = {
-    backgroundImage: `url(${movie.image_url})`,
-    backgroundSize: 'cover',
+    background: `url(${movie.image_url})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '16vw 9vw',
     position: 'relative'
   }
  
@@ -19,7 +21,7 @@ let MovieItem = ({ movie, that}) => {
               that.setState({showResults: true, currentMovie: movie})
             )
           }}
-        >▼</h3>
+        ><FaChevronDown/></h3>
       </div>
       
     </li>

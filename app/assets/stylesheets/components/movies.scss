@@ -18,14 +18,12 @@
 
 .movie-li {
   // flex: 0 0 20%;
+  // border: 3px solid red;
   text-align: center;
   margin: 0 2px;
   transition: transform 300ms ease 100ms;
   width: 16vw;
-  // max-width: 230px;
-  height: 10vw;
-  // max-height: 130px;
-  background-size: cover;
+  height: 9vw;
   position: relative;
 }
 
@@ -86,8 +84,6 @@
 
 .drop-content {
   height: 42vw;
-  // max-height: 545px;
-  // margin-top: 30px;
   position: relative;
 }
 
@@ -101,6 +97,7 @@
   color: white;
   width: 30%;
   position: relative;
+  // border: 3px solid purple;
 }
 
 .left:before {
@@ -111,15 +108,16 @@
   bottom: 0;
   left: 100%;
   width: 275px;
+  z-index: 1;
 }
 
 .right {
-  // background-image: url('https://i.pinimg.com/originals/98/52/80/985280b8d9904fd52d83b17433694a7a.jpg');
-  background-size: cover;
   width: 70%;
   // border: 3px solid red;
   display: flex;
   justify-content: flex-end;
+  // pointer-events: none;
+
 }
 
 .right-X {
@@ -133,6 +131,7 @@
   // border: 3px solid yellow;
   width: 6vw;
   height: 6vw;
+  z-index: 2;
 }
 
 .right-X:hover {
@@ -154,6 +153,13 @@
   right: 67%;
   // bottom: 0;
   padding: 10px;
+  z-index: 1;
+}
+
+.drop-movie {
+  position: absolute;
+  background-color: black;
+  pointer-events: none;
 }
 
 .movie-title-div {
@@ -167,26 +173,40 @@
 
 .movie-title {
   font-size: 3vw;
+  color: white;
   
   // position: absolute;
+}
+
+.movie-rating {
+  border: 1px solid #717171;
+  color: #717171;
+  padding: .2vw 1vw .1vw 1vw;
+}
+
+.movie-year {
+  color: #717171;
+  padding-right: 2vw;
 }
 
 .movie-info-div {
   // border: 3px solid green;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .movie-description-div {
   // border: 3px solid yellow;
   display: flex;
-  height: 7vw;
+  height: 8vw;
   align-items: center;
 }
 
 .movie-description {
-  font-size: 1.5vw;
+  font-size: 1.3vw;
+  color: #656665;
 }
 
 .movie-buttons-div {
@@ -220,7 +240,7 @@
 .add-list {
   display: flex;
   justify-content: center;
-  border: 1px solid white;
+  border: 1px solid #717171;
   border-radius: 1px;
   font-size: 1.5vw;
   width: 9vw;
@@ -230,35 +250,26 @@
   background-color: rgba(30, 30, 30, 0.2);
   transform: scale(1.03,1.03);
   transition: transform 100ms;
-  border: 1px solid white;
+  border: 1px solid #717171;
 }
 
 .movie-starring-div {
   // border: 3px solid pink;
   display: flex;
   flex-direction: row;
-  align-content: flex-start;
-  height: 7vw;
-  align-items: center
+  align-items: flex-start;
+  align-content: center;
+  height: 3vw;
+  color: #656665;
+  padding-top: 2vw;
+  font-size: 1vw;
 }
 
 .movie-starring {
   // border: 1px solid red;
-  padding-right: 3px;
-}
-
-.movie-genres-div {
-  // border: 3px solid purple;
-  display: flex;
-  flex-direction: row;
-  align-content: flex-start;
-  height: 6vw;
-  align-items: center;
-}
-
-.movie-genres {
-  // border: 1px solid blue;
-  padding-right: 3px;
+  padding-right: .5vw;
+  font-size: 1vw;
+  font-weight: bold;
 }
 
 .featured-movie-div {
@@ -294,7 +305,6 @@
   // border: 3px solid red;
   height: 15vw;
   width: 80%;
-  // background-image: url('https://i.redd.it/v514dq4oehe21.png');
 }
 
 .featured-movie-title {

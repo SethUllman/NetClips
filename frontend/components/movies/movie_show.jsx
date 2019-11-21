@@ -30,7 +30,6 @@ class MovieShow extends React.Component{
         <ReactPlayer
           className='movie-show'
           url={this.props.movie.video_url}
-          // url='https://www.youtube.com/watch?v=JvV640xrJ28'
           playing={true}
           controls={true}
           width={'100%'}

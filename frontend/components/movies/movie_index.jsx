@@ -18,6 +18,7 @@ class movieIndex extends React.Component{
     }
     this.handlePlay = this.handlePlay.bind(this);
     this.PlayFeatured = this.PlayFeatured.bind(this);
+    this.hideResults = this.hideResults.bind(this);
   }
 
   componentDidMount() {
@@ -33,6 +34,10 @@ class movieIndex extends React.Component{
   PlayFeatured() {
     const movie = this.props.movies[0];
     this.props.history.push(`/movies/${movie.id}`);
+  }
+
+  hideResults() {
+    this.setState({ showResults: false });
   }
 
   render(){
@@ -58,25 +63,33 @@ class movieIndex extends React.Component{
     let drama = drama1.splice(0, 6);
     let acclaimed = acclaimed1.splice(0, 6);
 
-
-    const dropStyle = this.state.currentMovie ? ({
-      backgroundImage: `url(${this.state.currentMovie.image_url})`,
-      backgroundSize: 'cover',
-      width: '70%'
-    } ) : null;
+// ------------
+    // const dropStyle = this.state.currentMovie ? ({
+    //   backgroundImage: `url(${this.state.currentMovie.image_url})`,
+    //   backgroundRepeat: 'no-repeat',
+    //   backgroundSize: '100% 42vw',
+    //   width: '70%'
+    // } ) : null;
     
     const { movies } = this.props;
-    this.MovieShow1 = (this.state.showResults) ? (
+    const MovieShow = (this.state.showResults) ? (
       
       <div className='drop-content'>
         <div className='drop-background'>
           <div className='left'></div>
-          <div className='right' style={dropStyle}>
-            <div className='right-X' onClick={() => {
-              return (
-                this.setState({ showResults: false, currentMovie: this.props.movies[0] })
-              )
-            }}>X</div>
+          <div className='right'>
+            <ReactPlayer
+              className='drop-movie'
+              url={this.state.currentMovie.video_url}
+              playing={true}
+              controls={false}
+              width={'68vw'}
+              height={'42vw'}
+              loop={false}
+              volume={0}
+              muted={true}
+            />
+            <div className='right-X' onClick={this.hideResults}>X</div>
           </div>
         </div>
         <div className='drop-content-container'>
@@ -86,7 +99,6 @@ class movieIndex extends React.Component{
           <div className='movie-info-div'>
             <h2 className='movie-year'>{this.state.currentMovie.year}</h2>
             <h2 className='movie-rating'>{this.state.currentMovie.maturity_rating}</h2>
-            <h2 className='movie-seasons'>{this.state.currentMovie.seasons == 0 ? '' : this.state.currentMovie.seasons} </h2>
           </div>
           <div className='movie-description-div'>
             <p className='movie-description'>{this.state.currentMovie.description}</p>
@@ -105,32 +117,28 @@ class movieIndex extends React.Component{
             <div className='movie-starring'>
               <p>Starring: </p>
             </div>
-            <div>
+            <div className='movie-cast'>
               <p>{this.state.currentMovie.cast}</p>
             </div>
-          </div>
-          <div className='movie-genres-div'>
-            <p className='movie-genres'>Genres: </p>
-            <p>{this.state.currentMovie.genres}</p>
           </div>
         </div>
       </div>
     ) : (
       <div></div>
     );
-
-    if (this.state.showResults){
-      if (this.state.currentMovie.genres === ('Sci-Fi & Fantasy')) {
-        this.MovieShow2 = this.MovieShow1;
-        // this.MovieShow1 = <div></div>;
+    if (this.state.currentMovie) {
+      if (this.state.currentMovie.genres === ('TV Comedy')) {
+        this.MovieShow1 = MovieShow;
+      } else if (this.state.currentMovie.genres === ('Sci-Fi & Fantasy')) {
+        this.MovieShow2 = MovieShow;
+        // debugger;
       } else if(this.state.currentMovie.genres === ('Drama')) {
-        this.MovieShow3 = this.MovieShow1;
-        // this.MovieShow1 = <div></div>
+        this.MovieShow3 = MovieShow;
       } else if(this.state.currentMovie.genres === ('Critically Acclaimed')) {
-        this.MovieShow4 = this.MovieShow1;
-        // this.MovieShow1 = <div></div>
+        this.MovieShow4 = MovieShow;
       }
     }
+    
     const featureMovie = <ReactPlayer
       id='featured-movie-id'
       className='featured-movie'
