@@ -131,7 +131,6 @@ class movieIndex extends React.Component{
         this.MovieShow1 = MovieShow;
       } else if (this.state.currentMovie.genres === ('Sci-Fi & Fantasy')) {
         this.MovieShow2 = MovieShow;
-        // debugger;
       } else if(this.state.currentMovie.genres === ('Drama')) {
         this.MovieShow3 = MovieShow;
       } else if(this.state.currentMovie.genres === ('Critically Acclaimed')) {
@@ -142,7 +141,6 @@ class movieIndex extends React.Component{
     const featureMovie = <ReactPlayer
       id='featured-movie-id'
       className='featured-movie'
-      // url={this.state.currentMovie.movie_url}
       url='https://vimeo.com/372833024'
       playing={true}
       controls={false}
@@ -173,7 +171,6 @@ class movieIndex extends React.Component{
           <div className='featured-rating-div'>
             <p className='featured-rating'>PG</p>
           </div>
-          
           {featureMovie}
         </div>
         <div className='genre-div'>

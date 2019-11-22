@@ -97,7 +97,6 @@
   color: white;
   width: 30%;
   position: relative;
-  // border: 3px solid purple;
 }
 
 .left:before {
@@ -113,11 +112,8 @@
 
 .right {
   width: 70%;
-  // border: 3px solid red;
   display: flex;
   justify-content: flex-end;
-  // pointer-events: none;
-
 }
 
 .right-X {
