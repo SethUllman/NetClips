@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   has_many :movies,
   through: :watch_list_items,
-  source: :movies
+  source: :movie
 
   attr_reader :password 
 
