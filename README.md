@@ -1,11 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##NetClips
 
-Things you may want to cover:
+NetClips is a clone of the popular video streaming service Netflix.
+You can find it here!: https://net-clips.herokuapp.com/?#/signup
 
-* Ruby version
+NetClips was built using Rails -v 5.2.3 for the backend and React/Redux for the Frontend.
 
 * System dependencies
 
