@@ -143,7 +143,7 @@ Finally, each MovieShow variable is rendered directly underneath their respectiv
 ```
 
 ## Technologies Used
-* Ruby onn Rails -v 5.2.3
+* Ruby on Rails -v 5.2.3
 
 * Javascript
 
