@@ -10,7 +10,7 @@ import MoviesShowContainer from './movies/movie_show_container';
 import WatchListContainer from './watch_list/watch_list_container';
 
 export default () => (
-  <div className="whole-page"> 
+  <div className='whole-page'> 
     <NavBarContainer/>
     {/* <WatchListContainer/> */}
     <Switch>

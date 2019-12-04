@@ -1,13 +1,11 @@
-html {
-  // overflow: hidden;
-}
-
 .whole-page {
   // background-image: url('https://backgrounddownload.com/wp-content/uploads/2018/09/background-netflix-5.jpg');
   background-color: #131313;
   background-size: cover;
-  height: 100%;
+  height: 100vh;
+  bottom: 0;
   overflow-y: hidden;
+  // border: 3px solid blue;
 }
 
 .session-form-div {

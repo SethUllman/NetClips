@@ -1,12 +1,6 @@
 import React from 'react';
 import {MovieItem} from './movie_item.jsx';
 import ReactPlayer from 'react-player';
-// import { Redirect } from 'react-router-dom';
-
-// import MoviePlayer from './movie_player.jsx';
-// import YouTube from 'react-youtube';
-
-
 
 class movieIndex extends React.Component{
   constructor(props){
@@ -173,6 +167,7 @@ class movieIndex extends React.Component{
           </div>
           {featureMovie}
         </div>
+        <div className='movie-uls'>
         <div className='genre-div'>
           
           <ul className='movie-ul'>
@@ -261,6 +256,7 @@ class movieIndex extends React.Component{
           <div>
             {this.MovieShow4}
           </div>
+        </div>
         </div>
       </div>
     );

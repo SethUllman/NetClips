@@ -4,7 +4,7 @@
   position: relative;
   background-color: #131313;
   background-size: cover;
-  height: 120vh;
+  height: 100%;
   overflow-x: hidden;
   // overflow-y: hidden;
 }
@@ -291,7 +291,7 @@
   height: 30vw;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
- 
+  top: 12vw;
   z-index: 1;
 }
 
@@ -382,7 +382,8 @@
   position: absolute;
   z-index: 2;
   right: 0;
-  bottom: 10vw;
+  // bottom: 10vw;
+  top: 28vw;
 }
 
 .genre-title {
@@ -399,4 +400,25 @@
   display: flex;
   flex-direction: column;
   align-content: flex-start;
+}
+
+.movie-uls {
+  position: absolute;
+  top: 38vw;
+  z-index: 2;
+  // border: 3px solid red;
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .movie-li {
+    border: 3px solid red;
+    text-align: center;
+    margin: 0 2px;
+    transition: transform 300ms ease 100ms;
+    width: 9vw;
+    height: 16vw;
+    position: relative;
+  }
 }
