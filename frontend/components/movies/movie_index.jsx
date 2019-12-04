@@ -139,7 +139,7 @@ class movieIndex extends React.Component{
       playing={true}
       controls={false}
       width={'100%'}
-      height={'55vw'}
+      height={'65vw'}
       loop={true}
       volume={0}
       muted={true}

@@ -271,14 +271,15 @@
 .featured-movie-div {
   // border: 3px solid blue;
   height: 55vw;
+  width: 100%;
   display: flex;
-  align-items: flex-end;
+  // align-items: flex-end;
   position: relative;
 }
 
 .featured-movie {
   position: relative;
-  // border: 3px solid green;
+  top: -7vw;
 }
 
 .featured-movie-info {
