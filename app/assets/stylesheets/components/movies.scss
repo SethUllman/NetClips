@@ -16,6 +16,12 @@
   padding: 0 5px 3vw 5px;
 }
 
+@media (max-width: 500px) {
+  .movie-li {
+    border: 3px solid blue;
+  }
+}
+
 .movie-li {
   // flex: 0 0 20%;
   // border: 3px solid red;
@@ -26,6 +32,8 @@
   height: 9vw;
   position: relative;
 }
+
+
 
 @keyframes fadein {
   from { opacity: 0; }
@@ -422,4 +430,5 @@
     height: 16vw;
     position: relative;
   }
+
 }

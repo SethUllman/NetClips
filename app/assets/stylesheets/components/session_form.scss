@@ -12,8 +12,10 @@
   background-image: url('https://backgrounddownload.com/wp-content/uploads/2018/09/background-netflix-5.jpg');
   background-size: cover;
   z-index: 1;
-  min-height: 125vh;
+  min-height: 100%;
   overflow-y: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .session-form {
@@ -24,7 +26,7 @@
   width: 450px;
   height: 600px;
   margin: 0 auto;
-  padding-top: 15vh;
+  // padding-top: 15vh;
   background-clip: content-box;
 }
 

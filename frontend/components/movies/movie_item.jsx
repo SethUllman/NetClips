@@ -3,10 +3,13 @@ import { FaChevronDown } from 'react-icons/fa';
 let MovieItem = ({ movie, that}) => {
   
   const liStyle = {
+    backgroundColor: 'black',
     background: `url(${movie.image_url})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: '16vw 9vw',
-    position: 'relative'
+    // backgroundSize: '16vw 100%',
+    backgroundPosition: 'center',
+    position: 'absolute'
   }
  
   return (
