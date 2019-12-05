@@ -6,6 +6,8 @@
   background-size: cover;
   height: 100%;
   overflow-x: hidden;
+  display: flex;
+  justify-content: center;
   // overflow-y: hidden;
 }
 
@@ -14,12 +16,6 @@
   display: flex;
   justify-content: space-evenly;
   padding: 0 5px 3vw 5px;
-}
-
-@media (max-width: 500px) {
-  .movie-li {
-    border: 3px solid blue;
-  }
 }
 
 .movie-li {
@@ -32,8 +28,6 @@
   height: 9vw;
   position: relative;
 }
-
-
 
 @keyframes fadein {
   from { opacity: 0; }
@@ -413,7 +407,7 @@
 
 .movie-uls {
   position: absolute;
-  top: 38vw;
+  top: 42vw;
   z-index: 2;
   // border: 3px solid red;
 }
