@@ -1,16 +1,15 @@
 .whole-page {
-  // background-image: url('https://backgrounddownload.com/wp-content/uploads/2018/09/background-netflix-5.jpg');
   background-color: #131313;
   background-size: cover;
   height: 100vh;
   bottom: 0;
   overflow-y: hidden;
-  // border: 3px solid blue;
 }
 
 .session-form-div {
-  background-image: url('https://backgrounddownload.com/wp-content/uploads/2018/09/background-netflix-5.jpg');
+  background-image: image_url('auth_background.jpg');
   background-size: cover;
+  background-position: center;
   z-index: 1;
   min-height: 100%;
   overflow-y: hidden;
@@ -23,20 +22,28 @@
   border-radius: 3px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   width: 450px;
   height: 600px;
   margin: 0 auto;
-  // padding-top: 15vh;
-  background-clip: content-box;
 }
+
+.signup-form{
+  display: flex;
+  height: 90%;
+  width: 90%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 
 .signin-header {
   font-family: sans-serif;
   font-weight: bold;
   font-size: 25px;
   color: white;
-  margin: 20px 40px 20px 67px;
-  padding-top: 60px;
 }
 
 ::placeholder {
@@ -49,36 +56,33 @@
   border-radius: 5px;
   width: 316px;
   height: 40px;
-  margin: 20px 67px 20px 67px;
   align-items: center;
   display: flex;
 }
 
 .email-input {
-  margin: 0px 30px 0px 30px;
   color: white;
   font-family: sans-serif;
   font-size: 16px;
   vertical-align: middle;
   width: 300px;
+  margin-left: 20px;
 }
 
 .password-div {
   display: flex;
-  position: relative;
   background-color: #323232;
   border-radius: 5px;
   width: 316px;
   height: 40px;
-  margin: 28px 67px 28px 67px;
 }
 
 .password-input {
-  margin: 0px 50px 0px 30px;
   color: white;
   font-family: sans-serif;
   vertical-align: middle;
   width: 300px;
+  margin-left: 20px;
 }
 
 .submit-button {
@@ -90,7 +94,6 @@
   border-radius: 5px;
   width: 316px;
   height: 40px;
-  margin: 0px 67px 30px 67px;
   text-align: center;
 }
 
@@ -103,14 +106,54 @@
   display: flex;
   font-family: sans-serif;
   color: grey;
-  padding: 0 0 0px 67px;
-  
+  flex-direction: row;
+}
+
+.signup-link{
+  margin-left: 10px;
 }
 
 .error-ul {
   font-family: sans-serif;
   color: orange;
   margin: 0 auto;
-  padding: 0 0 24px 70px;
-
 }
+
+.auth-contact {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.git-div{
+  width: 25%;
+  height: 100%;
+}
+
+.git-link{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-image: image_url('GitHub-Mark-Light-120px-plus.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.linked-div {
+  width: 25%;
+  height: 100%;
+}
+
+.linkedin-link{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-image: image_url('LI-In-Bug.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+

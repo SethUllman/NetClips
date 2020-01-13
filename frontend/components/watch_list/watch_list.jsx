@@ -15,7 +15,7 @@ class WatchList extends React.Component {
     const { movies } = this.props;
     return (
       <div className='watchList'>
-        <h1 className='watch-movies'>Movies Here</h1>
+        <h1 className='watch-movies'>{movies}</h1>
       </div>
     )
   }

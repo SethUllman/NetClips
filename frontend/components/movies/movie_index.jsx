@@ -57,13 +57,6 @@ class movieIndex extends React.Component{
     let drama = drama1.splice(0, 6);
     let acclaimed = acclaimed1.splice(0, 6);
 
-// ------------
-    // const dropStyle = this.state.currentMovie ? ({
-    //   backgroundImage: `url(${this.state.currentMovie.image_url})`,
-    //   backgroundRepeat: 'no-repeat',
-    //   backgroundSize: '100% 42vw',
-    //   width: '70%'
-    // } ) : null;
     
     const { movies } = this.props;
     const MovieShow = (this.state.showResults) ? (

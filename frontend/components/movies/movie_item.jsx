@@ -7,7 +7,6 @@ let MovieItem = ({ movie, that}) => {
     background: `url(${movie.image_url})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: '16vw 9vw',
-    // backgroundSize: '16vw 100%',
     backgroundPosition: 'center',
     position: 'absolute'
   }
@@ -15,7 +14,6 @@ let MovieItem = ({ movie, that}) => {
   return (
     <li key={movie.id} className='movie-li'>
       <div className='movie-li-content' style={liStyle}>
-        {/* <h2 className='movie-li-title'>{movie.title}</h2> */}
         <h3 
           className='content-drop' 
           key={`btn-${movie.id}`}

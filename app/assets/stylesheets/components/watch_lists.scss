@@ -5,12 +5,15 @@
 .watchList {
   width: 100vw;
   height: 100vh;
-  border: 3px solid blue;
+  // border: 1px solid blue;
   z-index: 2;
   position: relative;
+  top: 48px;
 }
 
 .watch-movies {
+  border: 1px solid blue;
   color: white;
   font-size: 100px;
+  height: 10px;
 }
