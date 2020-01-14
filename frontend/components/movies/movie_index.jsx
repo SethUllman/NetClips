@@ -40,7 +40,6 @@ class movieIndex extends React.Component{
     });
 
     let sci_fi1 = this.props.movies.filter( (movie) => {
-      // debugger;
       return movie.genres === 'Sci-Fi & Fantasy';
     });
 

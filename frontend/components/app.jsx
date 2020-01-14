@@ -12,7 +12,6 @@ import WatchListContainer from './watch_list/watch_list_container';
 export default () => (
   <div className='whole-page'> 
     <NavBarContainer/>
-    {/* <WatchListContainer/> */}
     <Switch>
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />

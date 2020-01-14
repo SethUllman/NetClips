@@ -1,5 +1,4 @@
 export const fetchWatchList = (movies) => {
-  debugger;
   return $.ajax({
     url: `api/watch_lists`,
     method: 'GET',

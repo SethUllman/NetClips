@@ -1,21 +1,36 @@
 import React from 'react';
+import {MovieItem} from '../movies/movie_item';
 
 class WatchList extends React.Component {
   constructor(props){
-    debugger;
     super(props);
   }
 
   componentDidMount() {
-    debugger;
     this.props.fetchWatchList(currentUser.id);
   }
 
   render() {
     const { movies } = this.props;
+    const movieList = (
+      <ul>
+        {
+          movies.map(movie => (
+            <MovieItem
+              key={movie.id}
+              movie={movie}
+              that={this}
+              state={this.state}
+            />
+          ))
+        }
+      </ul>
+    );
+      
+    
     return (
       <div className='watchList'>
-        <h1 className='watch-movies'>{movies}</h1>
+        <div className='watch-movies'>{movieList}</div>
       </div>
     )
   }

@@ -14,9 +14,8 @@ const display = currentUser ? (
         </li>
         <li className='nav-bar-li'>TV Shows</li>
         <li className='nav-bar-li'>Movies</li>
-        <li className='nav-bar-li'>Recently Added</li>
         <li className='nav-bar-li'>
-          <Link to={`/watch_list/${currentUser}`}>My List</Link>
+          <Link to={`/watch_list/${currentUser.id}`}>My List</Link>
         </li>
       </ul>
       
