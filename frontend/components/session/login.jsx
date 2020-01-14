@@ -10,6 +10,52 @@ class Login extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
+    this.startInterval = this.startInterval.bind(this);
+  }
+
+  handleDemoSubmit() {
+    this.props.login(this.state);
+  }
+
+  startInterval() {
+    this.letterInterval = setInterval(() => {
+      if (this.state.email !== "demo@email.com") {
+        this.addLetter()
+      }
+    }, 100)
+    this.letterInterval;
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.letterInterval);
+  }
+
+  addLetter() {
+    let keyword = "demo@email.com";
+    for (let i = 0; i < keyword.length; i++) {
+      if (this.state.email[i] !== keyword[i]) {
+        let newWord = this.state.email + keyword[i];
+        if (newWord === keyword) {
+          this.simulateSubmit();
+          this.setState({ email: newWord, password: newWord });
+        }
+        this.setState({ email: newWord, password: newWord });
+        return;
+      }
+    }
+  }
+
+  simulateSubmit() {
+    setTimeout(() => {
+      document.getElementById("demo-login").classList.add("clicked");
+      setTimeout(() => {
+        document.getElementById("demo-login").classList.remove("clicked");
+        setTimeout(() => {
+          this.handleDemoSubmit();
+        }, 300)
+      }, 400)
+    }, 900)
   }
 
   handleInput(type) {
@@ -66,7 +112,7 @@ class Login extends React.Component {
               <button className='submit-button' onClick={this.handleSubmit}>Sign In</button>
             </div>
             <div className='button-div'>
-              <button id='demo-login' className='submit-button' onClick={this.startInterval}>Demo Login</button>
+              <button id='demo-login' className='submit-button' onClick={this.startInterval}>Demo Sign In</button>
             </div>
             <div className="signup-btn" >
               <div>Have an account?</div>
