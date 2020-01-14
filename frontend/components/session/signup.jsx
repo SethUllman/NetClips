@@ -124,7 +124,7 @@ class Signup extends React.Component{
                 <a className='git-link' href="https://github.com/SethUllman" target="_blank"></a>
               </div>
               <div className='linked-div'>
-                <a className='linkedin-link' href="" target="_blank"></a>
+                <a className='linkedin-link' href="https://www.linkedin.com/in/seth-ullman-80027a199/" target="_blank"></a>
               </div>
             </div>
           </form>
