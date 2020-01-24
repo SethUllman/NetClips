@@ -2,7 +2,6 @@ import { RECEIVE_WATCH_LIST, CREATE_WATCH_LIST, REMOVE_WATCH_LIST  } from '../ac
 
 const watchListReducer = (state = {}, action) => {
   Object.freeze(state);
-
   switch (action.type) {
     case RECEIVE_WATCH_LIST:
       return action.movies;

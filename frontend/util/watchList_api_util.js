@@ -1,8 +1,7 @@
-export const fetchWatchList = (movies) => {
+export const fetchWatchList = () => {
   return $.ajax({
-    url: `api/watch_lists`,
-    method: 'GET',
-    data: { movies }
+    url: `api/watch_list`,
+    method: 'GET'
   })
 }
 

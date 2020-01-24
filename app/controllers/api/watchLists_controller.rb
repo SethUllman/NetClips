@@ -1,13 +1,12 @@
-class Api::WatchListController < ApplicationController
+class Api::WatchListsController < ApplicationController
 
   def create
     @movie = movie.find(params[:movie_id])
     current_user.movies << @movie
-    # render :movie_show
   end
 
   def index
-    @movies = current_user.movies
+    @list = current_user.movies
   end
 
   def destroy

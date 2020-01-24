@@ -7,7 +7,7 @@ class WatchList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchWatchList(currentUser.id);
+    this.props.fetchWatchList(this.props.currentUser);
   }
 
   render() {
