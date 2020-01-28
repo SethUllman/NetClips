@@ -8,7 +8,8 @@ class movieIndex extends React.Component{
     this.state = {
       movies: this.props.movies,
       showResults: false,
-      currentMovie: null
+      currentMovie: null,
+      watchList: null
     }
     this.handlePlay = this.handlePlay.bind(this);
     this.PlayFeatured = this.PlayFeatured.bind(this);
@@ -32,10 +33,11 @@ class movieIndex extends React.Component{
   }
 
   hideResults() {
-    this.setState({ showResults: false });
+    this.setState({ showResults: false, currentMovie: false });
   }
 
   render(){
+    
     let tv_comedy1 = this.props.movies.filter( (movie) => {
       return movie.genres === 'TV Comedy';
     });
