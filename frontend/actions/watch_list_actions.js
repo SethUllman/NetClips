@@ -4,10 +4,10 @@ export const RECEIVE_WATCH_LIST = 'RECEIVE_WATCH_LIST';
 export const CREATE_WATCH_LIST = 'ADD_WATCH_LIST';
 export const REMOVE_WATCH_LIST = 'REMOVE_WATCH_LIST';
 
-const receiveWatchList = user => {
+const receiveWatchList = (movies) => {
   return {
     type: RECEIVE_WATCH_LIST,
-    user
+    movies
   }
 }
 
@@ -25,11 +25,10 @@ const removeWatchList = movieId => {
   }
 }
 
-export const fetchWatchList = (user) => dispatch => {
-  return APIUtil.fetchWatchList(user)
-    .then(user => {
-      debugger;
-      dispatch(receiveWatchList(user))});
+export const fetchWatchList = () => dispatch => {
+  return APIUtil.fetchWatchList()
+    .then((lists) => {
+      dispatch(receiveWatchList(lists))});
 }
 
 export const addWatchList = (movie) => dispatch => {

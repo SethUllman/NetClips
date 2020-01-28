@@ -3,12 +3,12 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true}
   after_initialize :ensure_session_token
 
-  has_many :watch_list_items,
+  has_many :lists,
   foreign_key: :user_id,
-  class_name: :WatchList
+  class_name: :List
 
   has_many :movies,
-  through: :watch_list_items,
+  through: :lists,
   source: :movie
 
   attr_reader :password 

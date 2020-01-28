@@ -1,4 +1,4 @@
-class Api::Watch_ListsController < ApplicationController
+class Api::ListsController < ApplicationController
 
   def create
     @movie = movie.find(params[:movie_id])
