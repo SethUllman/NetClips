@@ -8,6 +8,28 @@ This project was designed and built in under two weeks.
 
 You can find it [here!](https://net-clips.herokuapp.com/?#/signup)
 
+## Technologies Used
+* Ruby on Rails -v 5.2.3
+
+* Javascript
+
+* HTML
+
+* SCSS
+
+* PostgreSQL
+
+## Libraries used:
+* React.js
+
+* Redux
+
+* JQuery
+
+* React-Player
+
+* BCrypt
+
 ## Login/Signup
 
 The login/signup screen features fully functional frontend and backend user authentication. 
@@ -141,39 +163,3 @@ Finally, each MovieShow variable is rendered directly underneath their respectiv
   </div>
 </div>
 ```
-
-## Technologies Used
-* Ruby on Rails -v 5.2.3
-
-* Javascript
-
-* HTML
-
-* SCSS
-
-* PostgreSQL
-
-## Libraries used:
-* React.js
-
-* Redux
-
-* JQuery
-
-* React-Player
-
-* BCrypt
-
-## Features:
-* Signup and Login using the demo login or a custom email & password
-
-* Home page displays videos as well as info on all the clips
-
-* Click play to watch video fullscreen with audio
-
-## Future Features:
-* Favorite videos using My List
-
-* Search by Title, genres, or actors via search bar
-
-* Browse by Movies, or TV Shows
