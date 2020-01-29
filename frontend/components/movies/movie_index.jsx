@@ -60,7 +60,6 @@ class movieIndex extends React.Component{
     let acclaimed = acclaimed1.splice(0, 6);
 
     
-    const { movies } = this.props;
     const MovieShow = (this.state.showResults) ? (
       
       <div className='drop-content'>

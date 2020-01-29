@@ -6,7 +6,7 @@ class MovieFocus extends React.Component{
   }
 
   render(){
-    return null;
+    return (null);
   }
 }
 

@@ -1,5 +1,5 @@
 
-json.list @list do |vid|
+json.array! @list.each do |vid|
   json.set! :title, vid.title
   json.set! :year, vid.year
   json.set! :director, vid.director

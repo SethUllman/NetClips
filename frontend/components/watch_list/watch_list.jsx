@@ -11,21 +11,10 @@ class WatchList extends React.Component {
   }
 
   render() {
-    // // debugger;
-    // const movieList = (
-    //   <ul>
-    //     {
-    //       watchList.map(movie => (
-    //         <MovieItem
-    //           key={movie.id}
-    //           movie={movie}
-    //           that={this}
-    //           state={this.state}
-    //         />
-    //       ))
-    //     }
-    //   </ul>
-    // );
+    // for (let [key, value] of Object.entries(this.props.state.watchList.list)) {
+    //   debugger;
+    //   console.log(key, value);
+    // }
     return (
       <div className='watchList'>
         <div className='watch-movies'></div>
