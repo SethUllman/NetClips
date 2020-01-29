@@ -1,6 +1,7 @@
 import React from 'react';
 import {MovieItem} from './movie_item.jsx';
 import ReactPlayer from 'react-player';
+import configureStore from '../../store/store';
 
 class movieIndex extends React.Component{
   constructor(props){
@@ -9,8 +10,10 @@ class movieIndex extends React.Component{
       movies: this.props.movies,
       showResults: false,
       currentMovie: null,
-      watchList: null
+      watchList: this.props.watchList,
     }
+
+    
     this.handlePlay = this.handlePlay.bind(this);
     this.PlayFeatured = this.PlayFeatured.bind(this);
     this.hideResults = this.hideResults.bind(this);
@@ -37,7 +40,6 @@ class movieIndex extends React.Component{
   }
 
   render(){
-    
     let tv_comedy1 = this.props.movies.filter( (movie) => {
       return movie.genres === 'TV Comedy';
     });
@@ -99,7 +101,9 @@ class movieIndex extends React.Component{
               onClick={this.handlePlay}>PLAY</button>
 {/* ------------------------------- */}
 
-            <button className='add-list'>+ MY LIST</button>
+            <button className='add-list' onClick={() => {
+                  this.props.addWatchList(this.state.currentMovie);
+            }}>+ MY LIST</button>
           </div>
           <div className='movie-starring-div'>
             <div className='movie-starring'>
@@ -151,7 +155,10 @@ class movieIndex extends React.Component{
                 <button
                   className='featured-play-btn'
                   onClick={ this.PlayFeatured }>Play</button>
-                <button className='featured-add-list'>+My List</button>
+                <button className='featured-add-list' onClick={() => {
+                  console.log('clicked!');
+                  this.props.addWatchList(this.state.currentMovie);
+                }}>+My List</button>
               </div>
               
             </div>
@@ -255,6 +262,7 @@ class movieIndex extends React.Component{
       </div>
     );
   }
+  
 }
 
 export default movieIndex;

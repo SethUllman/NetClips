@@ -4,10 +4,10 @@ export const RECEIVE_WATCH_LIST = 'RECEIVE_WATCH_LIST';
 export const CREATE_WATCH_LIST = 'ADD_WATCH_LIST';
 export const REMOVE_WATCH_LIST = 'REMOVE_WATCH_LIST';
 
-const receiveWatchList = (movies) => {
+const receiveWatchList = (list) => {
   return {
     type: RECEIVE_WATCH_LIST,
-    movies
+    list
   }
 }
 

@@ -8,7 +8,8 @@ import React from 'react';
 
 const mapStateToProps = state => {
   return {
-    movies: Object.values(state.movies)
+    movies: Object.values(state.movies),
+    watchList: Object.values(state.watchList)
   }
 }
 

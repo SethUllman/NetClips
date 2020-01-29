@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import React from 'react';
 
 const mapStateToProps = state => {
+  debugger;
   return {
     state: state
   }

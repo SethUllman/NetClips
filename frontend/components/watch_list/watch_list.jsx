@@ -22,9 +22,7 @@ class WatchList extends React.Component {
           state={this.state}
         />
       )
-    }
-    console.log(movieList);
-  
+    }  
     return (
       <div className='watchList'>
         <div className='watch-movies'>{movieList}</div>
