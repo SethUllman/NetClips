@@ -20,12 +20,20 @@ class movieIndex extends React.Component{
     this.listButtonText = this.listButtonText.bind(this);
   }
 
-  listButtonText() {
+  listButtonText(featured = false) {
+
     let found = false;
     let i = 0;
     while (!found && i < this.props.watchList.length) {
       let list = this.props.watchList[i];
       debugger;
+      if (featured){
+        if (list.title.includes('Sonic')){
+          return <button className='featured-in-list'><FaCheck />MY LIST</button>
+        } else {
+          return <button className='featured-add-list'>+ MY LIST</button>;
+        }
+      }
       if (list.title === this.state.currentMovie.title){
         found = true;
       }
@@ -170,9 +178,7 @@ class movieIndex extends React.Component{
                 <button
                   className='featured-play-btn'
                   onClick={ this.PlayFeatured }>Play</button>
-                <button className='featured-add-list' onClick={() => {
-                  
-                }}></button>
+                <button className='featured-add-list' >{this.listButtonText(true)}</button>
               </div>
               
             </div>
