@@ -1,6 +1,7 @@
 import React from 'react';
 import {MovieItem} from './movie_item.jsx';
 import ReactPlayer from 'react-player';
+import { FaCheck } from 'react-icons/fa';
 
 class movieIndex extends React.Component{
   constructor(props){
@@ -25,13 +26,13 @@ class movieIndex extends React.Component{
     while (!found && i < this.props.watchList.length) {
       let list = this.props.watchList[i];
       debugger;
-      if (list === this.currentMovie){
+      if (list.title === this.state.currentMovie.title){
         found = true;
       }
       i++
     }
     if (found){
-      return <button className='add-list'>MY LIST</button>
+      return <button className='in-list'><FaCheck/>MY LIST</button>
     } else {
       return <button className='add-list'>+ MY LIST</button>;
     }
