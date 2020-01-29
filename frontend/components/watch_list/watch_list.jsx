@@ -11,13 +11,23 @@ class WatchList extends React.Component {
   }
 
   render() {
-    // for (let [key, value] of Object.entries(this.props.state.watchList.list)) {
-    //   debugger;
-    //   console.log(key, value);
-    // }
+    const watchList = this.props.state.watchList;
+    const movieList = [];
+    for (let [key, value] of Object.entries(watchList)) {
+      movieList.push(
+        <MovieItem
+          key={value.id}
+          movie={value}
+          that={this}
+          state={this.state}
+        />
+      )
+    }
+    console.log(movieList);
+  
     return (
       <div className='watchList'>
-        <div className='watch-movies'></div>
+        <div className='watch-movies'>{movieList}</div>
       </div>
     )
   }
