@@ -1,7 +1,6 @@
 import React from 'react';
 import {MovieItem} from './movie_item.jsx';
 import ReactPlayer from 'react-player';
-import configureStore from '../../store/store';
 
 class movieIndex extends React.Component{
   constructor(props){
@@ -17,6 +16,25 @@ class movieIndex extends React.Component{
     this.handlePlay = this.handlePlay.bind(this);
     this.PlayFeatured = this.PlayFeatured.bind(this);
     this.hideResults = this.hideResults.bind(this);
+    this.listButtonText = this.listButtonText.bind(this);
+  }
+
+  listButtonText() {
+    let found = false;
+    let i = 0;
+    while (!found && i < this.props.watchList.length) {
+      let list = this.props.watchList[i];
+      debugger;
+      if (list === this.currentMovie){
+        found = true;
+      }
+      i++
+    }
+    if (found){
+      return <button className='add-list'>MY LIST</button>
+    } else {
+      return <button className='add-list'>+ MY LIST</button>;
+    }
   }
 
   componentDidMount() {
@@ -36,7 +54,7 @@ class movieIndex extends React.Component{
   }
 
   hideResults() {
-    this.setState({ showResults: false, currentMovie: false });
+    this.setState({ showResults: false, currentMovie: null });
   }
 
   render(){
@@ -100,10 +118,7 @@ class movieIndex extends React.Component{
               className='play-btn'
               onClick={this.handlePlay}>PLAY</button>
 {/* ------------------------------- */}
-
-            <button className='add-list' onClick={() => {
-                  this.props.addWatchList(this.state.currentMovie);
-            }}>+ MY LIST</button>
+            {this.listButtonText()}
           </div>
           <div className='movie-starring-div'>
             <div className='movie-starring'>
@@ -142,7 +157,6 @@ class movieIndex extends React.Component{
       volume={0}
       muted={true}
     />
-
     return (
       <div className='movies-index-div'>
         <div className='featured-movie-div'>
@@ -156,9 +170,8 @@ class movieIndex extends React.Component{
                   className='featured-play-btn'
                   onClick={ this.PlayFeatured }>Play</button>
                 <button className='featured-add-list' onClick={() => {
-                  console.log('clicked!');
-                  this.props.addWatchList(this.state.currentMovie);
-                }}>+My List</button>
+                  
+                }}></button>
               </div>
               
             </div>

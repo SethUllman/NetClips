@@ -5,7 +5,6 @@ const moviesReducer = (state = {}, action) => {
 
   switch(action.type){
     case RECEIVE_MOVIES:
-      debugger;
       return action.movies;
     case RECEIVE_MOVIE:
       return Object.assign({}, state, { [action.movie.id]: action.movie })

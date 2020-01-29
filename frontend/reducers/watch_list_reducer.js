@@ -4,7 +4,6 @@ const watchListReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_WATCH_LIST:
-      debugger;
       return action.list;
     case CREATE_WATCH_LIST:
       return Object.assign({}, state, {[action.list.id]: action.list});
