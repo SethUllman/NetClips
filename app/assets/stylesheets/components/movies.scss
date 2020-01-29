@@ -244,6 +244,15 @@
   width: 9vw;
 }
 
+.in-list {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid #717171;
+  border-radius: 1px;
+  font-size: 1.5vw;
+  width: 9vw;
+}
+
 .add-list:hover {
   background-color: rgba(30, 30, 30, 0.2);
   transform: scale(1.03,1.03);
