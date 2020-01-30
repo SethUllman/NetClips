@@ -95,7 +95,6 @@ class movieIndex extends React.Component{
   }
 
   hideResults() {
-    console.log(this.state.currentMovie);
     this.setState({ currentMovie: null });
   }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-// import LoginContainer from './session/login_container';
 import { AuthRoute, ProtectedRoute, RootRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 import SignupContainer from './session/signup_container';
