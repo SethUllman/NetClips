@@ -8,7 +8,6 @@ class movieIndex extends React.Component{
     super(props);
     this.state = {
       movies: this.props.movies,
-      showResults: false,
       currentMovie: null,
       watchList: this.props.watchList,
     }
@@ -95,7 +94,7 @@ class movieIndex extends React.Component{
   }
 
   hideResults() {
-    this.setState({ showResults: false, currentMovie: null });
+    this.setState({ currentMovie: null });
   }
 
   render(){
@@ -121,7 +120,7 @@ class movieIndex extends React.Component{
     let acclaimed = acclaimed1.splice(0, 6);
 
     
-    const MovieShow = (this.state.showResults) ? (
+    const MovieShow = (this.state.currentMovie) ? (
       
       <div className='drop-content'>
         <div className='drop-background'>
@@ -138,7 +137,7 @@ class movieIndex extends React.Component{
               volume={0}
               muted={true}
             />
-            <div className='right-X' onClick={this.hideResults}>X</div>
+            <div className='right-X' onClick={() => {this.hideResults()}}>X</div>
           </div>
         </div>
         <div className='drop-content-container'>
