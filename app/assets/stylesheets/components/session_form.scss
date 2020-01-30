@@ -87,8 +87,8 @@
 }
 
 .submit-button {
-  background-color: red;
-  color: white;
+  background-color: #FDF0B1;
+  color: black;
   font-family: sans-serif;
   opacity: 1;
 
@@ -96,6 +96,10 @@
   width: 316px;
   height: 40px;
   text-align: center;
+}
+
+.submit-button:hover{
+  background-color: #FBFEC5;
 }
 
 #signup-link {
