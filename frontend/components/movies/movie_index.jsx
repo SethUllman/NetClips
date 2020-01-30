@@ -99,6 +99,12 @@ class movieIndex extends React.Component{
     this.setState({ currentMovie: null });
   }
 
+  currentPos(genre) {
+    if (this.state.currentMovie && this.state.currentMovie.genres === genre){
+      return movieFocus(this.state.currentMovie, this);
+    }
+  }
+
   render(){
     let tv_comedy1 = this.props.movies.filter( (movie) => {
       return movie.genres === 'TV Comedy';
@@ -121,22 +127,21 @@ class movieIndex extends React.Component{
     let drama = drama1.splice(0, 6);
     let acclaimed = acclaimed1.splice(0, 6);
 
-    const MovieShow = movieFocus(this.state.currentMovie, this);
       
       
-    if (this.state.currentMovie) {
-      if (this.state.currentMovie.genres === ('TV Comedy')) {
-        this.MovieShow1 = MovieShow;
-      } else if (this.state.currentMovie.genres === ('Sci-Fi & Fantasy')) {
-        this.MovieShow2 = MovieShow;
-      } else if(this.state.currentMovie.genres === ('Drama')) {
-        this.MovieShow3 = MovieShow;
-      } else if(this.state.currentMovie.genres === ('Critically Acclaimed')) {
-        this.MovieShow4 = MovieShow;
-      }
-    } else {
+    // if (this.state.currentMovie) {
+    //   if (this.state.currentMovie.genres === ('TV Comedy')) {
+    //     this.MovieShow1 = MovieShow;
+    //   } else if (this.state.currentMovie.genres === ('Sci-Fi & Fantasy')) {
+    //     this.MovieShow2 = MovieShow;
+    //   } else if(this.state.currentMovie.genres === ('Drama')) {
+    //     this.MovieShow3 = MovieShow;
+    //   } else if(this.state.currentMovie.genres === ('Critically Acclaimed')) {
+    //     this.MovieShow4 = MovieShow;
+    //   }
+    // } else {
 
-    }
+    // }
     
     const featureMovie = <ReactPlayer
       id='featured-movie-id'
@@ -150,6 +155,7 @@ class movieIndex extends React.Component{
       volume={0}
       muted={true}
     />
+
     return (
       <div className='movies-index-div'>
         <div className='featured-movie-div'>
@@ -193,7 +199,7 @@ class movieIndex extends React.Component{
             </div>
           </ul>
           <div>
-            {this.MovieShow1}
+            {}
           </div>
         </div>
         <div className='genre-div'>
