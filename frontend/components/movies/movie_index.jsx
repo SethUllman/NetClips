@@ -199,7 +199,7 @@ class movieIndex extends React.Component{
             </div>
           </ul>
           <div>
-            {}
+            {this.currentPos('TV Comedy')}
           </div>
         </div>
         <div className='genre-div'>
@@ -221,7 +221,7 @@ class movieIndex extends React.Component{
             </div>
           </ul>
           <div>
-            {this.MovieShow2}
+            {this.currentPos('Sci-Fi & Fantasy')}
           </div>
         </div>
         <div className='genre-div'>
@@ -243,7 +243,7 @@ class movieIndex extends React.Component{
             </div>
           </ul>
           <div>
-            {this.MovieShow3}
+            {this.currentPos('Drama')}
           </div>
         </div>
         <div className='genre-div'>
@@ -265,7 +265,7 @@ class movieIndex extends React.Component{
             </div>
           </ul>
           <div>
-            {this.MovieShow4}
+            {this.currentPos('Critically Acclaimed')}
           </div>
         </div>
         </div>
