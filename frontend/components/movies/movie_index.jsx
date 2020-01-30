@@ -94,6 +94,7 @@ class movieIndex extends React.Component{
   }
 
   hideResults() {
+    console.log(this.state.currentMovie);
     this.setState({ currentMovie: null });
   }
 
@@ -118,8 +119,8 @@ class movieIndex extends React.Component{
     let sci_fi = sci_fi1.splice(0, 6);
     let drama = drama1.splice(0, 6);
     let acclaimed = acclaimed1.splice(0, 6);
+//--------------------------------------------------------
 
-    
     const MovieShow = (this.state.currentMovie) ? (
       
       <div className='drop-content'>
@@ -153,11 +154,10 @@ class movieIndex extends React.Component{
           </div>
           <div className='movie-buttons-div'>
 
- {/* ------------------------------- */}
             <button 
               className='play-btn'
               onClick={this.handlePlay}>PLAY</button>
-{/* ------------------------------- */}
+
             {this.listButtonText()}
           </div>
           <div className='movie-starring-div'>
@@ -173,6 +173,8 @@ class movieIndex extends React.Component{
     ) : (
       <div></div>
     );
+
+    //-----------------------------------------------------------
     if (this.state.currentMovie) {
       if (this.state.currentMovie.genres === ('TV Comedy')) {
         this.MovieShow1 = MovieShow;
@@ -183,6 +185,8 @@ class movieIndex extends React.Component{
       } else if(this.state.currentMovie.genres === ('Critically Acclaimed')) {
         this.MovieShow4 = MovieShow;
       }
+    } else {
+
     }
     
     const featureMovie = <ReactPlayer
