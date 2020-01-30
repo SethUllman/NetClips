@@ -18,6 +18,7 @@ class movieIndex extends React.Component{
     this.PlayFeatured = this.PlayFeatured.bind(this);
     this.hideResults = this.hideResults.bind(this);
     this.listButtonText = this.listButtonText.bind(this);
+    this.updateList = this.updateList.bind(this);
   }
 
   listButtonText(featured = false) {
@@ -26,12 +27,11 @@ class movieIndex extends React.Component{
     let i = 0;
     while (!found && i < this.props.watchList.length) {
       let list = this.props.watchList[i];
-      debugger;
       if (featured){
         if (list.title.includes('Sonic')){
-          return <button className='featured-in-list'><FaCheck />MY LIST</button>
+          return <button className='featured-in-list' onClick={this.updateList(true)}><FaCheck />MY LIST</button>
         } else {
-          return <button className='featured-add-list'>+ MY LIST</button>;
+          return <button className='featured-add-list' onClick={this.updateList(true)}>+ MY LIST</button>;
         }
       }
       if (list.title === this.state.currentMovie.title){
@@ -40,10 +40,41 @@ class movieIndex extends React.Component{
       i++
     }
     if (found){
-      return <button className='in-list'><FaCheck/>MY LIST</button>
+      return <button className='in-list' onClick={this.updateList()}><FaCheck/>MY LIST</button>
     } else {
-      return <button className='add-list'>+ MY LIST</button>;
+      return <button className='add-list' onClick={this.updateList()}>+ MY LIST</button>;
     }
+  }
+
+  updateList(featured = false){
+    console.log('click!');
+    // let found = false;
+    // let i = 0;
+    // if (featured){
+    //   while (!found && i < this.props.watchList.length) {
+    //     let list = this.props.watchList[i];
+    //     if (list.title.includes('Sonic') && featured === true){
+    //       found = true;
+    //       this.props.deleteWatchList(list.id);
+    //     }
+    //   }
+    //   if (!found){
+    //     this.props.addWatchList(Object.values(this.state.movies)[0]);
+    //   }
+    // } else {
+    //   let current = this.state.currentMovie;
+    //   while (!found && i < this.props.watchList.length) {
+    //     let list = this.props.watchList[i];
+    //     if (list.title === current.title){
+    //       found = true;
+    //       this.props.deleteWatchList(list.id);
+    //     }
+    //   }
+    //   if (!found){
+    //     this.props.addWatchList(current);
+    //   }
+    // }
+    
   }
 
   componentDidMount() {
