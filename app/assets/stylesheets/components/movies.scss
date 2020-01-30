@@ -253,7 +253,7 @@
   width: 9vw;
 }
 
-.add-list:hover {
+.add-list:hover, .in-list:hover {
   background-color: rgba(30, 30, 30, 0.2);
   transform: scale(1.03,1.03);
   transition: transform 100ms;
@@ -381,7 +381,7 @@
   height: 3vw;
 }
 
-.featured-add-list:hover {
+.featured-add-list:hover ,.featured-in-list:hover{
   background-color: white;
   color: black;
   transform: scale(1.03,1.03);
