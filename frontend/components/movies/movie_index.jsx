@@ -29,9 +29,9 @@ class movieIndex extends React.Component{
       let list = this.props.watchList[i];
       if (featured){
         if (list.title.includes('Sonic')){
-          return <button className='featured-in-list' onClick={this.updateList(true)}><FaCheck />MY LIST</button>
+          return <button className='featured-in-list' onClick={() => {this.updateList(true)}}><FaCheck />MY LIST</button>
         } else {
-          return <button className='featured-add-list' onClick={this.updateList(true)}>+ MY LIST</button>;
+          return <button className='featured-add-list' onClick={() => {this.updateList(true)}}>+ MY LIST</button>;
         }
       }
       if (list.title === this.state.currentMovie.title){
@@ -40,40 +40,41 @@ class movieIndex extends React.Component{
       i++
     }
     if (found){
-      return <button className='in-list' onClick={this.updateList()}><FaCheck/>MY LIST</button>
+      return <button className='in-list' onClick={() => {this.updateList()}}><FaCheck/>MY LIST</button>
     } else {
-      return <button className='add-list' onClick={this.updateList()}>+ MY LIST</button>;
+      return <button className='add-list' onClick={() => {this.updateList()}}>+ MY LIST</button>;
     }
   }
 
   updateList(featured = false){
-    console.log('click!');
-    // let found = false;
-    // let i = 0;
-    // if (featured){
-    //   while (!found && i < this.props.watchList.length) {
-    //     let list = this.props.watchList[i];
-    //     if (list.title.includes('Sonic') && featured === true){
-    //       found = true;
-    //       this.props.deleteWatchList(list.id);
-    //     }
-    //   }
-    //   if (!found){
-    //     this.props.addWatchList(Object.values(this.state.movies)[0]);
-    //   }
-    // } else {
-    //   let current = this.state.currentMovie;
-    //   while (!found && i < this.props.watchList.length) {
-    //     let list = this.props.watchList[i];
-    //     if (list.title === current.title){
-    //       found = true;
-    //       this.props.deleteWatchList(list.id);
-    //     }
-    //   }
-    //   if (!found){
-    //     this.props.addWatchList(current);
-    //   }
-    // }
+    let found = false;
+    let i = 0;
+    if (featured){
+      while (!found && i < this.props.watchList.length) {
+        let list = this.props.watchList[i];
+        if (list.title.includes('Sonic') && featured === true){
+          found = true;
+          this.props.deleteWatchList(list.id);
+        }
+        i++
+      }
+      if (!found){
+        this.props.addWatchList(Object.values(this.state.movies)[0]);
+      }
+    } else {
+      let current = this.state.currentMovie;
+      while (!found && i < this.props.watchList.length) {
+        let list = this.props.watchList[i];
+        if (list.title === current.title){
+          found = true;
+          this.props.deleteWatchList(list.id);
+        }
+        i++
+      }
+      if (!found){
+        this.props.addWatchList(current);
+      }
+    }
     
   }
 
@@ -209,7 +210,7 @@ class movieIndex extends React.Component{
                 <button
                   className='featured-play-btn'
                   onClick={ this.PlayFeatured }>Play</button>
-                <button className='featured-add-list' >{this.listButtonText(true)}</button>
+                {this.listButtonText(true)}
               </div>
               
             </div>
