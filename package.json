@@ -2,7 +2,7 @@
   "name": "netclips",
   "version": "1.0.0",
   "description": "## NetClips",
-  "main": "netclips.jsx",
+  "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -14,7 +14,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --mode=development --watch",
-    "start": "webpack --mode=production --watch"
+    "start": "webpack --mode=production --watch",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
