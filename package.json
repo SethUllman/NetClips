@@ -2,8 +2,8 @@
   "name": "netclips",
   "private": true,
   "engines": {
-    "npm": "6.12.0",
-    "node": "13.2.0"
+    "node": "13.2.0",
+    "npm": "6.11.3"
   },
   "dependencies": {
     "@ava/babel": "^1.0.0",
@@ -11,6 +11,7 @@
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
     "babel-loader": "^8.0.6",
+    "node": "^13.7.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-icons": "^3.8.0",
