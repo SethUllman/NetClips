@@ -2,7 +2,7 @@
   "name": "netclips",
   "version": "1.0.0",
   "description": "## NetClips",
-  "main": "index.js",
+  "main": "netclips.jsx",
   "directories": {
     "lib": "lib",
     "test": "test"
