@@ -2,7 +2,8 @@
   "name": "netclips",
   "private": true,
   "engines": {
-    "npm": "6.4.1"
+    "npm": "6.4.1",
+    "node": "13.7.0"
   },
   "dependencies": {
     "@babel/core": "^7.8.4",
