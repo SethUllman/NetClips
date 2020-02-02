@@ -2,7 +2,7 @@
   "name": "netclips",
   "version": "1.0.0",
   "description": "## NetClips",
-  "main": "webpack.config.js",
+  "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
