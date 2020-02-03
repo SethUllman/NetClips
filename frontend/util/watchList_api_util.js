@@ -14,7 +14,6 @@ export const createWatchList = (movie) => {
 }
 
 export const removeWatchList = (movieId) => {
-  debugger;
   return $.ajax({
     url: `/api/lists/${movieId}`,
     method: 'DELETE'

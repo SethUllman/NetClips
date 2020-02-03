@@ -67,7 +67,6 @@ class movieIndex extends React.Component{
         let list = this.props.watchList[i];
         if (list.title === current.title){
           found = true;
-          debugger;
           this.props.deleteWatchList(current.id);
         }
         i++
