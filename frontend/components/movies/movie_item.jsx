@@ -18,13 +18,9 @@ let MovieItem = ({ movie, that}) => {
           className='content-drop' 
           key={`btn-${movie.id}`}
           onClick={() => {
-            if (that.state.showResults){
-              that.setState({currentMovie: null});
-            } else {
               that.setState({currentMovie: movie});
             }
-            
-          }}
+          }
         ><FaChevronDown/></div>
       </div>
       

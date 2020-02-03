@@ -5,7 +5,7 @@ class WatchList extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      featured: null
+      featured: false
     }
   }
 
