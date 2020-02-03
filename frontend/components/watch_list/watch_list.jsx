@@ -17,7 +17,6 @@ class WatchList extends React.Component {
       movieList.push(
         
           <MovieItem
-            className='watch-list-item'
             key={value.id}
             movie={value}
             that={this}
