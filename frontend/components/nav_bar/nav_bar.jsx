@@ -46,7 +46,9 @@ const display = currentUser ? (
   return (
     <header className="nav-bar">
       <div className='nav-options'>
-        <h1 className="logo">NETCLIPS</h1>
+        <div className="logo">
+          <Link to='/movies'>NETCLIPS</Link>
+        </div>
         <div>
           {display}
         </div>
