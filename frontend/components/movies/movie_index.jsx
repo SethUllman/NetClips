@@ -24,7 +24,7 @@ class movieIndex extends React.Component{
   listButtonText(featured) {
     let found = false;
     let i = 0;
-    while (!found && i < 50) {
+    while (!found && i < 51) {
       let list = this.props.watchList[i];
       if (featured){
         if (list && list.title.includes('Sonic')){
@@ -33,7 +33,8 @@ class movieIndex extends React.Component{
           return <button className='featured-add-list' onClick={() => {this.updateList(true)}}>+ MY LIST</button>;
         }
       }
-      if (list.title === this.state.currentMovie.title){
+      console.log(list);
+      if (list && (list.title === this.state.currentMovie.title)){
         found = true;
       }
       i++
@@ -48,7 +49,6 @@ class movieIndex extends React.Component{
   updateList(featured){
     let found = false;
     let i = 0;
-    debugger;
     if (featured){
       while (!found && i < this.props.watchList.length) {
         let list = this.props.watchList[i];
