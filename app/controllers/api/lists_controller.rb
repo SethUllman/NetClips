@@ -10,8 +10,10 @@ class Api::ListsController < ApplicationController
   end
 
   def destroy
-    @list = current_user.lists.find_by(movie_id: params[:id])
-    @list.destroy
+    @movie = current_user.lists.find_by(movie_id: params[:id])
+    @movie.destroy
+    @list = current_user.movies
+    render '/api/lists/index'
   end
 
   private

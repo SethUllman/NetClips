@@ -12,6 +12,7 @@ const receiveWatchList = (list) => {
 }
 
 const createWatchList = movie => {
+  debugger;
   return {
     type: CREATE_WATCH_LIST,
     movie
