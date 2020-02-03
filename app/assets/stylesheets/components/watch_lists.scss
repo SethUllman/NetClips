@@ -13,9 +13,16 @@
 .watch-movies {
   color: white;
   font-size: 100px;
-  height: 10px;
+  height: contain;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   padding-top: 5vh;
 }
+
+.watch-lis {
+  display: flex;
+  padding: 10px 5px 3vw 15px;
+  flex-wrap: wrap;
+}
+
