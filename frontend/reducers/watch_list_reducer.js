@@ -6,6 +6,7 @@ const watchListReducer = (state = {}, action) => {
     case RECEIVE_WATCH_LIST:
       return action.list;
     case CREATE_WATCH_LIST:
+      debugger;
       return Object.assign({}, state, {[action.list.id]: action.list});
     case REMOVE_WATCH_LIST:
       let newState = Object.assign({}, state);

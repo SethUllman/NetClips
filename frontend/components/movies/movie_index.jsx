@@ -72,6 +72,7 @@ class movieIndex extends React.Component{
         i++
       }
       if (!found){
+        debugger;
         this.props.addWatchList(current);
       }
     }
