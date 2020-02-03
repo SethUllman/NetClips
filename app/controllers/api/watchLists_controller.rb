@@ -1,7 +1,6 @@
 class Api::Watch_ListsController < ApplicationController
 
   def create
-    debugger
     @movie = movie.find(params[:movie_id])
     current_user.movies << @movie
   end
