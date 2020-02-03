@@ -15,17 +15,25 @@ class WatchList extends React.Component {
     const movieList = [];
     for (let [key, value] of Object.entries(watchList)) {
       movieList.push(
-        <MovieItem
-          key={value.id}
-          movie={value}
-          that={this}
-          state={this.state}
-        />
+        
+          <MovieItem
+            key={value.id}
+            movie={value}
+            that={this}
+            state={this.state}
+          />
+        
       )
     }  
     return (
       <div className='watchList'>
-        <div className='watch-movies'>{movieList}</div>
+        <div className='watch-movies'>
+          <ul className='movie-ul'>
+            <div className='movie-lis'>
+              {movieList}
+            </div>
+          </ul>
+        </div>
       </div>
     )
   }
