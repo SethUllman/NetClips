@@ -19,8 +19,6 @@
 }
 
 .movie-li {
-  // flex: 0 0 20%;
-  border: 3px solid red;
   text-align: center;
   margin: 0 2px;
   transition: transform 300ms ease 100ms;
@@ -78,7 +76,7 @@
   cursor: pointer;
   width: 100%;
   height: 20%;
-  border: 1px solid blue;
+  bottom: 0;
 }
 
 .content-drop:hover {
