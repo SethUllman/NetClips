@@ -10,8 +10,9 @@ class Api::ListsController < ApplicationController
   end
 
   def destroy
-    @movie = current_user.movies.find(params[:movie_id])
-    current_user.movies - @movie
+    debugger
+    @list = current_user.lists.find_by(movie_id: params[:id])
+    @list.destroy
   end
 
   private
