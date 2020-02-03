@@ -11,7 +11,6 @@ class Api::ListsController < ApplicationController
 
   def destroy
     @movie = current_user.lists.find_by(movie_id: params[:id])
-    # debugger
     @movie.destroy
     @list = current_user.movies
     render '/api/lists/index'
