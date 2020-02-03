@@ -35,7 +35,6 @@ const display = currentUser ? (
       <li>
         <div className='logout-btn'>
             <button onClick={() => {
-              debugger;
               logout();
               }}>Logout</button>
         </div>
