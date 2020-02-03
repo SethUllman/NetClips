@@ -6,7 +6,6 @@ export const fetchWatchList = () => {
 }
 
 export const createWatchList = (movie) => {
-  debugger;
   return $.ajax({
     url: '/api/lists',
     method: 'POST',
