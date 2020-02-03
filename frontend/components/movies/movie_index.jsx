@@ -52,9 +52,10 @@ class movieIndex extends React.Component{
     if (featured){
       while (!found && i < this.props.watchList.length) {
         let list = this.props.watchList[i];
+        debugger;
         if (list.title.includes('Sonic') && featured === true){
           found = true;
-          this.props.deleteWatchList(list.id);
+          this.props.deleteWatchList(current.id);
         }
         i++
       }
