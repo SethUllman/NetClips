@@ -105,42 +105,21 @@ class movieIndex extends React.Component{
   }
 
   render(){
-    let tv_comedy1 = this.props.movies.filter( (movie) => {
+    let tv_comedy = this.props.movies.filter( (movie) => {
       return movie.genres === 'TV Comedy';
-    });
+    }).splice(0, 6);
 
-    let sci_fi1 = this.props.movies.filter( (movie) => {
+    let sci_fi = this.props.movies.filter( (movie) => {
       return movie.genres === 'Sci-Fi & Fantasy';
-    });
+    }).splice(0, 6);
 
-    let drama1 = this.props.movies.filter((movie) => {
+    let drama = this.props.movies.filter((movie) => {
       return movie.genres === 'Drama';
-    });
+    }).splice(0, 6);
 
-    let acclaimed1 = this.props.movies.filter((movie) => {
+    let acclaimed = this.props.movies.filter((movie) => {
       return movie.genres === 'Critically Acclaimed';
-    });
-
-    let tv_comedy = tv_comedy1.splice(0, 6);
-    let sci_fi = sci_fi1.splice(0, 6);
-    let drama = drama1.splice(0, 6);
-    let acclaimed = acclaimed1.splice(0, 6);
-
-      
-      
-    // if (this.state.currentMovie) {
-    //   if (this.state.currentMovie.genres === ('TV Comedy')) {
-    //     this.MovieShow1 = MovieShow;
-    //   } else if (this.state.currentMovie.genres === ('Sci-Fi & Fantasy')) {
-    //     this.MovieShow2 = MovieShow;
-    //   } else if(this.state.currentMovie.genres === ('Drama')) {
-    //     this.MovieShow3 = MovieShow;
-    //   } else if(this.state.currentMovie.genres === ('Critically Acclaimed')) {
-    //     this.MovieShow4 = MovieShow;
-    //   }
-    // } else {
-
-    // }
+    }).splice(0, 6);
     
     const featureMovie = <ReactPlayer
       id='featured-movie-id'
