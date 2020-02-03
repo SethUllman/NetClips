@@ -4,6 +4,9 @@ import {MovieItem} from '../movies/movie_item';
 class WatchList extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      featured: null
+    }
   }
 
   componentDidMount() {

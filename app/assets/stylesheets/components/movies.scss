@@ -20,7 +20,7 @@
 
 .movie-li {
   // flex: 0 0 20%;
-  // border: 3px solid red;
+  border: 3px solid red;
   text-align: center;
   margin: 0 2px;
   transition: transform 300ms ease 100ms;
@@ -74,10 +74,11 @@
   opacity: 0;
   position: absolute;
   color: rgba(0, 0, 0, 0.9);
+  font-size: 25px;
   cursor: pointer;
-  bottom: -20px;
-  padding-left: 45%;
-  padding-right: 55%;
+  width: 100%;
+  height: 20%;
+  border: 1px solid blue;
 }
 
 .content-drop:hover {

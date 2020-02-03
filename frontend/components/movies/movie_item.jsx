@@ -14,7 +14,7 @@ let MovieItem = ({ movie, that}) => {
   return (
     <li key={movie.id} className='movie-li'>
       <div className='movie-li-content' style={liStyle}>
-        <h3 
+        <div 
           className='content-drop' 
           key={`btn-${movie.id}`}
           onClick={() => {
@@ -25,7 +25,7 @@ let MovieItem = ({ movie, that}) => {
             }
             
           }}
-        ><FaChevronDown/></h3>
+        ><FaChevronDown/></div>
       </div>
       
     </li>
