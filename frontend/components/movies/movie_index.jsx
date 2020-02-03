@@ -33,7 +33,6 @@ class movieIndex extends React.Component{
           return <button className='featured-add-list' onClick={() => {this.updateList(true)}}>+ MY LIST</button>;
         }
       }
-      console.log(list);
       if (list && (list.title === this.state.currentMovie.title)){
         found = true;
       }
