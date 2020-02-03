@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
-import { logout } from '../../actions/session';
 
 export default ({ currentUser, logout }) => {
 
@@ -35,7 +34,10 @@ const display = currentUser ? (
       </li>
       <li>
         <div className='logout-btn'>
-            <button onClick={logout}>Logout</button>
+            <button onClick={() => {
+              debugger;
+              logout();
+              }}>Logout</button>
         </div>
       </li>
     </ul>
