@@ -39,7 +39,7 @@ const movieFocus = (currentMovie, that) => {
               className='play-btn'
               onClick={that.handlePlay}>PLAY</button>
 
-            {that.listButtonText()}
+            {that.listButtonText(false)}
           </div>
           <div className='movie-starring-div'>
             <div className='movie-starring'>

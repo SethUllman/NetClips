@@ -21,14 +21,13 @@ class movieIndex extends React.Component{
     this.updateList = this.updateList.bind(this);
   }
 
-  listButtonText(featured = false) {
-
+  listButtonText(featured) {
     let found = false;
     let i = 0;
-    while (!found && i < this.props.watchList.length) {
+    while (!found && i < 50) {
       let list = this.props.watchList[i];
       if (featured){
-        if (list.title.includes('Sonic')){
+        if (list && list.title.includes('Sonic')){
           return <button className='featured-in-list' onClick={() => {this.updateList(true)}}><FaCheck />MY LIST</button>
         } else {
           return <button className='featured-add-list' onClick={() => {this.updateList(true)}}>+ MY LIST</button>;
@@ -40,27 +39,27 @@ class movieIndex extends React.Component{
       i++
     }
     if (found){
-      return <button className='in-list' onClick={() => {this.updateList()}}><FaCheck/>MY LIST</button>
+      return <button className='in-list' onClick={() => {this.updateList(false)}}><FaCheck/>MY LIST</button>
     } else {
-      return <button className='add-list' onClick={() => {this.updateList()}}>+ MY LIST</button>;
+      return <button className='add-list' onClick={() => {this.updateList(false)}}>+ MY LIST</button>;
     }
   }
 
-  updateList(featured = false){
+  updateList(featured){
     let found = false;
     let i = 0;
+    debugger;
     if (featured){
       while (!found && i < this.props.watchList.length) {
         let list = this.props.watchList[i];
-        debugger;
         if (list.title.includes('Sonic') && featured === true){
           found = true;
-          this.props.deleteWatchList(current.id);
+          this.props.deleteWatchList(list.id);
         }
         i++
       }
       if (!found){
-        this.props.addWatchList(Object.values(this.state.movies)[0]);
+        this.props.addWatchList(this.props.movies[0]);
       }
     } else {
       let current = this.state.currentMovie;
@@ -73,6 +72,7 @@ class movieIndex extends React.Component{
         i++
       }
       if (!found){
+
         this.props.addWatchList(current);
       }
     }
