@@ -42,8 +42,9 @@ class WatchList extends React.Component {
     let i = 0;
     
     let current = this.state.currentMovie;
-    while (!found && i < this.props.watchList.length) {
-      let list = this.props.watchList[i];
+    debugger;
+    while (!found && i < this.props.state.watchList.length) {
+      let list = this.props.state.watchList[i];
       if (list.title === current.title) {
         found = true;
         this.props.deleteWatchList(current.id);
