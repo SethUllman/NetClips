@@ -14,10 +14,17 @@ class WatchList extends React.Component {
     this.updateList = this.updateList.bind(this);
     this.hideResults = this.hideResults.bind(this);
     this.listButtonText = this.listButtonText.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchWatchList(this.props.currentUser);
+  }
+
+  handlePlay(e) {
+    e.preventDefault();
+    const movie = this.state.currentMovie;
+    this.props.history.push(`/movies/${movie.id}`);
   }
 
   listButtonText() {
