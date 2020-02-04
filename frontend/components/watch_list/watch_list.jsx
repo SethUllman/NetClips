@@ -11,6 +11,9 @@ class WatchList extends React.Component {
       currentMovie: false
     }
     this.placeFocus = this.placeFocus.bind(this);
+    this.updateList = this.updateList.bind(this);
+    this.hideResults = this.hideResults.bind(this);
+    this.listButtonText = this.listButtonText.bind(this);
   }
 
   componentDidMount() {
@@ -20,6 +23,7 @@ class WatchList extends React.Component {
   listButtonText() {
     let found = false;
     let i = 0;
+    debugger;
     while (!found && i < 51) {
       let list = this.props.state.watchList[i];
       if (list && (list.title === this.state.currentMovie.title)) {
@@ -28,9 +32,9 @@ class WatchList extends React.Component {
       i++
     }
     if (found) {
-      return <button className='in-list' onClick={() => { this.updateList(false) }}><FaCheck />MY LIST</button>
+      return <button className='in-list' onClick={() => { this.updateList() }}><FaCheck />MY LIST</button>
     } else {
-      return <button className='add-list' onClick={() => { this.updateList(false) }}>+ MY LIST</button>;
+      return <button className='add-list' onClick={() => { this.updateList() }}>+ MY LIST</button>;
     }
   }
 
@@ -56,13 +60,15 @@ class WatchList extends React.Component {
   }
 
   placeFocus(list) {
+    let found = false;
     list.forEach( (movie) => {
       if (movie.props.movie === this.state.currentMovie){
-        debugger;
-        return movieFocus(this.state.currentMovie, this);
+        found = true;
       }
     });
-    
+    if (found){
+      return movieFocus(this.state.currentMovie, this);
+    }
   }
 
   hideResults() {
