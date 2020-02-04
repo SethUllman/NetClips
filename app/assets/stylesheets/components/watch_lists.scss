@@ -4,7 +4,8 @@
 
 .watchList {
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
+  overflow-y: scroll;
   z-index: 2;
   position: relative;
   top: 48px;

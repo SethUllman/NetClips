@@ -19,7 +19,6 @@ class WatchList extends React.Component {
 
   listButtonText() {
     let found = false;
-    debugger;
     let i = 0;
     while (!found && i < 51) {
       let list = this.props.state.watchList[i];
@@ -56,10 +55,14 @@ class WatchList extends React.Component {
 
   }
 
-  placeFocus() {
-    if (this.state.currentMovie){
-      return movieFocus(this.state.currentMovie, this);
-    }
+  placeFocus(list) {
+    list.forEach( (movie) => {
+      if (movie.props.movie === this.state.currentMovie){
+        debugger;
+        return movieFocus(this.state.currentMovie, this);
+      }
+    });
+    
   }
 
   hideResults() {
@@ -97,31 +100,31 @@ class WatchList extends React.Component {
               {list1}
             </div>
           </ul>
-          {this.placeFocus()}
+          {this.placeFocus(list1)}
           <ul className='movie-ul'>
             <div className='watch-lis'>
               {list2}
             </div>
           </ul>
-          {this.placeFocus()}
+          {this.placeFocus(list2)}
           <ul className='movie-ul'>
             <div className='watch-lis'>
               {list3}
             </div>
           </ul>
-          {this.placeFocus()}
+          {this.placeFocus(list3)}
           <ul className='movie-ul'>
             <div className='watch-lis'>
               {list4}
             </div>
           </ul>
-          {this.placeFocus()}
+          {this.placeFocus(list4)}
           <ul className='movie-ul'>
             <div className='watch-lis'>
               {list5}
             </div>
           </ul>
-          {this.placeFocus()}
+          {this.placeFocus(list5)}
           <ul className='movie-ul'>
             <div className='watch-lis'>
               {list6}
