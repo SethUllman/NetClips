@@ -23,7 +23,6 @@ class WatchList extends React.Component {
   listButtonText() {
     let found = false;
     let i = 0;
-    debugger;
     while (!found && i < 51) {
       let list = this.props.state.watchList[i];
       if (list && (list.title === this.state.currentMovie.title)) {
