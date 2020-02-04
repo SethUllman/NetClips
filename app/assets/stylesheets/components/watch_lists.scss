@@ -7,6 +7,7 @@
   z-index: 2;
   position: relative;
   top: 48px;
+  height: fit-content;
   background: #131313;
 }
 
@@ -22,8 +23,10 @@
 
 .watch-lis {
   display: flex;
-  padding: 10px 5px 3vw 15px;
+  padding: 35px 5px 3vw 15px;
   flex-wrap: wrap;
+  z-index: 10;
+
 }
 
 .movie-ul{
