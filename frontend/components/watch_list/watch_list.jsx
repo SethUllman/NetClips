@@ -15,10 +15,71 @@ class WatchList extends React.Component {
     this.props.fetchWatchList(this.props.currentUser);
   }
 
+  listButtonText(featured) {
+    let found = false;
+    let i = 0;
+    while (!found && i < 51) {
+      let list = this.props.watchList[i];
+      if (featured) {
+        if (list && list.title.includes('Sonic')) {
+          return <button className='featured-in-list' onClick={() => { this.updateList(true) }}><FaCheck />MY LIST</button>
+        } else {
+          return <button className='featured-add-list' onClick={() => { this.updateList(true) }}>+ MY LIST</button>;
+        }
+      }
+      if (list && (list.title === this.state.currentMovie.title)) {
+        found = true;
+      }
+      i++
+    }
+    if (found) {
+      return <button className='in-list' onClick={() => { this.updateList(false) }}><FaCheck />MY LIST</button>
+    } else {
+      return <button className='add-list' onClick={() => { this.updateList(false) }}>+ MY LIST</button>;
+    }
+  }
+
+  updateList(featured) {
+    let found = false;
+    let i = 0;
+    if (featured) {
+      while (!found && i < this.props.watchList.length) {
+        let list = this.props.watchList[i];
+        if (list.title.includes('Sonic') && featured === true) {
+          found = true;
+          this.props.deleteWatchList(list.id);
+        }
+        i++
+      }
+      if (!found) {
+        this.props.addWatchList(this.props.movies[0]);
+      }
+    } else {
+      let current = this.state.currentMovie;
+      while (!found && i < this.props.watchList.length) {
+        let list = this.props.watchList[i];
+        if (list.title === current.title) {
+          found = true;
+          this.props.deleteWatchList(current.id);
+        }
+        i++
+      }
+      if (!found) {
+
+        this.props.addWatchList(current);
+      }
+    }
+
+  }
+
   placeFocus() {
     if (this.state.currentMovie){
       return movieFocus(this.state.currentMovie, this);
     }
+  }
+
+  hideResults() {
+    this.setState({ currentMovie: null });
   }
 
   render() {
