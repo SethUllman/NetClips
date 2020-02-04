@@ -15,6 +15,7 @@ class WatchList extends React.Component {
     this.hideResults = this.hideResults.bind(this);
     this.listButtonText = this.listButtonText.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
+    this.listPlacement = this.listPlacement.bind(this);
   }
 
   componentDidMount() {
@@ -81,6 +82,14 @@ class WatchList extends React.Component {
     this.setState({ currentMovie: null });
   }
 
+  listPlacement(list){
+    if (list.length > 0){
+      return list;
+    } else {
+      return <div></div>
+    }
+  }
+
   render() {
     const watchList = this.props.state.watchList;
     const movieList = [];
@@ -109,37 +118,37 @@ class WatchList extends React.Component {
         <div className='watch-movies'>
           <ul className='movie-ul'>
             <div className='watch-lis'>
-              {list1}
+              {this.listPlacement(list1)}
             </div>
           </ul>
           {this.placeFocus(list1)}
           <ul className='movie-ul'>
             <div className='watch-lis'>
-              {list2}
+              {this.listPlacement(list2)}
             </div>
           </ul>
           {this.placeFocus(list2)}
           <ul className='movie-ul'>
             <div className='watch-lis'>
-              {list3}
+              {this.listPlacement(list3)}
             </div>
           </ul>
           {this.placeFocus(list3)}
           <ul className='movie-ul'>
             <div className='watch-lis'>
-              {list4}
+              {this.listPlacement(list4)}
             </div>
           </ul>
           {this.placeFocus(list4)}
           <ul className='movie-ul'>
             <div className='watch-lis'>
-              {list5}
+              {this.listPlacement(list5)}
             </div>
           </ul>
           {this.placeFocus(list5)}
           <ul className='movie-ul'>
             <div className='watch-lis'>
-              {list6}
+              {this.listPlacement(list6)}
             </div>
           </ul>
         </div>
