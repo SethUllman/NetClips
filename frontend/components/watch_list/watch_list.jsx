@@ -42,7 +42,6 @@ class WatchList extends React.Component {
     let i = 0;
     
     let current = this.state.currentMovie;
-    debugger;
     while (!found && i < this.props.state.watchList.length) {
       let list = this.props.state.watchList[i];
       if (list.title === current.title) {
