@@ -1,6 +1,8 @@
 import React from 'react';
 import {MovieItem} from '../movies/movie_item';
 import movieFocus from '../movies/movie_focus';
+import { FaCheck } from 'react-icons/fa';
+
 
 class WatchList extends React.Component {
   constructor(props){
@@ -17,9 +19,10 @@ class WatchList extends React.Component {
 
   listButtonText() {
     let found = false;
+    debugger;
     let i = 0;
     while (!found && i < 51) {
-      let list = this.props.watchList[i];
+      let list = this.props.state.watchList[i];
       if (list && (list.title === this.state.currentMovie.title)) {
         found = true;
       }
@@ -85,6 +88,7 @@ class WatchList extends React.Component {
     let list4 = movieList.splice(0, 6);
     let list5 = movieList.splice(0, 6);
     let list6 = movieList.splice(0, 6);
+
     return (
       <div className='watchList'>
         <div className='watch-movies'>
@@ -99,21 +103,25 @@ class WatchList extends React.Component {
               {list2}
             </div>
           </ul>
+          {this.placeFocus()}
           <ul className='movie-ul'>
             <div className='watch-lis'>
               {list3}
             </div>
           </ul>
+          {this.placeFocus()}
           <ul className='movie-ul'>
             <div className='watch-lis'>
               {list4}
             </div>
           </ul>
+          {this.placeFocus()}
           <ul className='movie-ul'>
             <div className='watch-lis'>
               {list5}
             </div>
           </ul>
+          {this.placeFocus()}
           <ul className='movie-ul'>
             <div className='watch-lis'>
               {list6}
