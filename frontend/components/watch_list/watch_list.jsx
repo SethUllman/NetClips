@@ -1,16 +1,24 @@
 import React from 'react';
 import {MovieItem} from '../movies/movie_item';
+import movieFocus from '../movies/movie_focus';
 
 class WatchList extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      featured: false
+      currentMovie: false
     }
+    this.placeFocus = this.placeFocus.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchWatchList(this.props.currentUser);
+  }
+
+  placeFocus() {
+    if (this.state.currentMovie){
+      return movieFocus(this.state.currentMovie, this);
+    }
   }
 
   render() {
@@ -43,6 +51,7 @@ class WatchList extends React.Component {
               {list1}
             </div>
           </ul>
+          {this.placeFocus()}
           <ul className='movie-ul'>
             <div className='watch-lis'>
               {list2}
