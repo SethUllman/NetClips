@@ -15,18 +15,11 @@ class WatchList extends React.Component {
     this.props.fetchWatchList(this.props.currentUser);
   }
 
-  listButtonText(featured) {
+  listButtonText() {
     let found = false;
     let i = 0;
     while (!found && i < 51) {
       let list = this.props.watchList[i];
-      if (featured) {
-        if (list && list.title.includes('Sonic')) {
-          return <button className='featured-in-list' onClick={() => { this.updateList(true) }}><FaCheck />MY LIST</button>
-        } else {
-          return <button className='featured-add-list' onClick={() => { this.updateList(true) }}>+ MY LIST</button>;
-        }
-      }
       if (list && (list.title === this.state.currentMovie.title)) {
         found = true;
       }
@@ -39,36 +32,24 @@ class WatchList extends React.Component {
     }
   }
 
-  updateList(featured) {
+  updateList() {
     let found = false;
     let i = 0;
-    if (featured) {
-      while (!found && i < this.props.watchList.length) {
-        let list = this.props.watchList[i];
-        if (list.title.includes('Sonic') && featured === true) {
-          found = true;
-          this.props.deleteWatchList(list.id);
-        }
-        i++
+    
+    let current = this.state.currentMovie;
+    while (!found && i < this.props.watchList.length) {
+      let list = this.props.watchList[i];
+      if (list.title === current.title) {
+        found = true;
+        this.props.deleteWatchList(current.id);
       }
-      if (!found) {
-        this.props.addWatchList(this.props.movies[0]);
-      }
-    } else {
-      let current = this.state.currentMovie;
-      while (!found && i < this.props.watchList.length) {
-        let list = this.props.watchList[i];
-        if (list.title === current.title) {
-          found = true;
-          this.props.deleteWatchList(current.id);
-        }
-        i++
-      }
-      if (!found) {
-
-        this.props.addWatchList(current);
-      }
+      i++
     }
+    if (!found) {
+
+      this.props.addWatchList(current);
+    }
+    
 
   }
 
