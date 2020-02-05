@@ -56,14 +56,16 @@
   border: 1px solid white;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 30px;
 }
 
 .search-icon {
-
+  font-size: 20px;
 }
 
 .search-input {
-
+  margin-left: 5px;
 }
 
 .search-header {
