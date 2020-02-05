@@ -5,15 +5,18 @@ import { FaSearch } from 'react-icons/fa';
 class NavBar extends React.Component{
   constructor(props){
     super(props);
-
     this.state = {
-      search: ""
+      search: ''
     }
 
     this.display = this.display.bind(this);
     this.searchBar = this.searchBar.bind(this);
     this.logoutBtn = this.logoutBtn.bind(this);
     this.handleInput = this.handleInput.bind(this);
+  }
+
+  componentDidUpdate(){
+    window.search = this.state.search;
   }
 
   display() {
