@@ -28,18 +28,23 @@ class Search extends React.Component{
   }
 
   searchResults() {
-    let results = [];
+    let titles = [];
+    let people = [];
     for (let i = 0; i <= 25; i++){
       let current = this.props.movies[i];
-      if (current && current.title.includes(this.state.search)){
-        results.push(current);
+      if (current && (current.title.toLowerCase().includes(this.state.search.toLowerCase()))){
+        titles.push(current);
+      }
+      if (current && (current.cast.toLowerCase().includes(this.state.search.toLowerCase())) || (current.director.toLowerCase().includes(this.state.search.toLowerCase()))){
+        people.push(current);
       }
     }
-    this.filteredResults(results);
+    this.filteredResults(titles, people);
   }
 
-  filteredResults(results) {
-    console.log(results);
+  filteredResults(titles, people) {
+    console.log(titles);
+    console.log(people);
   }
 
   render(){
