@@ -53,15 +53,15 @@
 .search-bar {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid white;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 30px;
+  height: 34px;
 }
 
 .search-icon {
   font-size: 20px;
+  margin-left: 5px;
+  cursor: pointer;
 }
 
 .search-input {

@@ -28,11 +28,14 @@ const display = currentUser ? (
     <ul className='search-header'>
       <li>
         <div className='search-bar'>
-          <div className='search-icon'>
+          <div className='search-icon' onClick={ () => {
+            return (
+              <div className='search-input'>
+                <input type="text" />
+              </div>
+            );
+          }}>
             <FaSearch/>
-          </div>
-          <div className='search-input'>
-            <input type="text"/>
           </div>
         </div>
       </li>
