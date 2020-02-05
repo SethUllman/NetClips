@@ -11,6 +11,10 @@ class NavBar extends React.Component{
     this.logoutBtn = this.logoutBtn.bind(this);
   }
 
+  componentDidMount(){
+
+  }
+
   display() {
     if (this.props.currentUser){
       return(
@@ -22,7 +26,7 @@ class NavBar extends React.Component{
             {/* <li className='nav-bar-li'>TV Shows</li>
             <li className='nav-bar-li'>Movies</li> */}
             <li className='nav-bar-li'>
-              <Link to={`/watch_list/${currentUser.id}`}>My List</Link>
+              <Link to={`/watch_list/${this.props.currentUser.id}`}>My List</Link>
             </li>
           </ul>
 
@@ -54,7 +58,7 @@ class NavBar extends React.Component{
       return (
         <div className='logout-btn'>
           <button onClick={() => {
-            logout();
+            this.props.logout();
           }}>Logout</button>
         </div>
       );
