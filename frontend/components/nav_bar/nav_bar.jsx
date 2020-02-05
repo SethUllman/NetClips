@@ -7,12 +7,13 @@ class NavBar extends React.Component{
     super(props);
 
     this.state = {
-      search: null
+      search: ""
     }
 
     this.display = this.display.bind(this);
     this.searchBar = this.searchBar.bind(this);
     this.logoutBtn = this.logoutBtn.bind(this);
+    this.handleInput = this.handleInput.bind(this);
   }
 
   display() {
@@ -47,6 +48,7 @@ class NavBar extends React.Component{
               type="text" 
               value={this.state.search}
               placeholder="Titles, people"
+              onChange={this.handleInput()}
             />
           </div>
         </div>
@@ -68,6 +70,9 @@ class NavBar extends React.Component{
   }
 
   handleInput() {
+    if (!this.state.search){
+      
+    }
     return (e) => {
       this.setState({ search: e.target.value });
     };
