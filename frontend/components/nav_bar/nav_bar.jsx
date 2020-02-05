@@ -27,10 +27,14 @@ const display = currentUser ? (
   const logoutBtn = currentUser ? (
     <ul className='search-header'>
       <li>
-        <label className='search-bar'>
-          <FaSearch/>
-          <input type="text"/>
-        </label>
+        <div className='search-bar'>
+          <div className='search-icon'>
+            <FaSearch/>
+          </div>
+          <div className='search-input'>
+            <input type="text"/>
+          </div>
+        </div>
       </li>
       <li>
         <div className='logout-btn'>
