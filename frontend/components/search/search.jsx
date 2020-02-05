@@ -54,7 +54,7 @@ class Search extends React.Component{
     for (let i = 0; i <= 25; i++) {
       let current = this.props.movies[i];
 
-      if (current && (current.cast.toLowerCase().includes(this.state.search.toLowerCase())) || (current.director.toLowerCase().includes(this.state.search.toLowerCase()))) {
+      if (current && (current.cast.toLowerCase().includes(this.state.search.toLowerCase()))) {
         people.push(current);
       }
     }
