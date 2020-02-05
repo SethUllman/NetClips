@@ -24,24 +24,34 @@ class movieIndex extends React.Component{
   listButtonText(featured) {
     let found = false;
     let i = 0;
-    while (!found && i < 51) {
-      let list = this.props.watchList[i];
-      if (featured){
+    if (featured) {
+      while (i <= this.props.watchList.length) {
+        let list = this.props.watchList[i];
+          
         if (list && list.title.includes('Sonic')){
+          found = true;
           return <button className='featured-in-list' onClick={() => {this.updateList(true)}}><FaCheck />MY LIST</button>
-        } else {
-          return <button className='featured-add-list' onClick={() => {this.updateList(true)}}>+ MY LIST</button>;
         }
+        
+        
+        i++
       }
-      if (list && (list.title === this.state.currentMovie.title)){
-        found = true;
+      if (!found){
+        return <button className='featured-add-list' onClick={() => { this.updateList(true) }}>+ MY LIST</button>;
       }
-      i++
-    }
-    if (found){
-      return <button className='in-list' onClick={() => {this.updateList(false)}}><FaCheck/>MY LIST</button>
     } else {
-      return <button className='add-list' onClick={() => {this.updateList(false)}}>+ MY LIST</button>;
+      while ( i <= this.props.watchList.length) {
+        let list = this.props.watchList[i];
+        if (list && (list.title === this.state.currentMovie.title)) {
+          found = true;
+        }
+        i++
+      }
+      if (found){
+        return <button className='in-list' onClick={() => {this.updateList(false)}}><FaCheck/>MY LIST</button>
+      } else {
+        return <button className='add-list' onClick={() => {this.updateList(false)}}>+ MY LIST</button>;
+      }
     }
   }
 
