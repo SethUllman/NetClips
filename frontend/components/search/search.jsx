@@ -7,7 +7,8 @@ class Search extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      search: ""
+      search: "",
+      currentMovie: false
     }
 
     this.titleResults = this.titleResults.bind(this);
