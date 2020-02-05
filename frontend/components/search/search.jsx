@@ -181,6 +181,24 @@ class Search extends React.Component{
             </div>
           </ul>
           {this.placeFocus(list1)}
+          <ul className='movie-ul'>
+            <div className='watch-lis'>
+              {this.listPlacement(list2)}
+            </div>
+          </ul>
+          {this.placeFocus(list2)}
+          <ul className='movie-ul'>
+            <div className='watch-lis'>
+              {this.listPlacement(list3)}
+            </div>
+          </ul>
+          {this.placeFocus(list3)}
+          <ul className='movie-ul'>
+            <div className='watch-lis'>
+              {this.listPlacement(list4)}
+            </div>
+          </ul>
+          {this.placeFocus(list4)}
         </div>
       </div>
     )
