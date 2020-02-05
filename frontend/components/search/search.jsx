@@ -23,8 +23,8 @@ class Search extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchMovies();
-    this.props.fetchWatchList();
+    // this.props.fetchMovies();
+    // this.props.fetchWatchList();
     this.checkSearch();
 
   }
@@ -71,7 +71,7 @@ class Search extends React.Component{
     let found = false;
     let i = 0;
     while (!found && i < 51) {
-      let list = this.props.state.watchList[i];
+      let list = this.props.watchList[i];
       if (list && (list.title === this.state.currentMovie.title)) {
         found = true;
       }
@@ -89,8 +89,8 @@ class Search extends React.Component{
     let i = 0;
 
     let current = this.state.currentMovie;
-    while (!found && i < this.props.state.watchList.length) {
-      let list = this.props.state.watchList[i];
+    while (!found && i < this.props.watchList.length) {
+      let list = this.props.watchList[i];
       if (list.title === current.title) {
         found = true;
         this.props.deleteWatchList(current.id);
@@ -171,12 +171,16 @@ class Search extends React.Component{
 
     return (
       <div className='search-results'>
-        <div classname='watch-movies'>
+        <div className='watch-movies'>
           <ul className='movie-ul'>
+          <div className='search-title'>
+            Titles
+          </div>
             <div className='watch-lis'>
               {this.listPlacement(list1)}
             </div>
           </ul>
+          {this.placeFocus(list1)}
         </div>
       </div>
     )
