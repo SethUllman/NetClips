@@ -70,9 +70,12 @@ class NavBar extends React.Component{
   }
 
   handleInput() {
-    if (!this.state.search){
-      
+    if (this.state.search.length > 0){
+      window.location.href = '/#/search';
+    } else {
+      window.location.href = '/#/movies';
     }
+
     return (e) => {
       this.setState({ search: e.target.value });
     };
