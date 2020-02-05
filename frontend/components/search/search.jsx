@@ -11,8 +11,13 @@ class Search extends React.Component{
     }
 
     this.searchResults = this.searchResults.bind(this);
-    this.filteredResults = this.filteredResults.bind(this);
     this.checkSearch = this.checkSearch.bind(this);
+    this.placeFocus = this.placeFocus.bind(this);
+    this.updateList = this.updateList.bind(this);
+    this.hideResults = this.hideResults.bind(this);
+    this.listButtonText = this.listButtonText.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
+    this.listPlacement = this.listPlacement.bind(this);
   }
 
   componentDidMount(){
@@ -42,12 +47,7 @@ class Search extends React.Component{
         people.push(current);
       }
     }
-    this.filteredResults(titles, people);
-  }
-
-  filteredResults(titles, people) {
-    console.log(titles);
-    console.log(people);
+    return ({titles: titles, people: people});
   }
 
   handlePlay(e) {
@@ -120,9 +120,12 @@ class Search extends React.Component{
 
   render(){
 
-    const watchList = this.props.state.watchList;
+    const results = this.searchResults();
+    const movies = results.movies;
+    const people = results.people;
+
     const movieList = [];
-    for (let [key, value] of Object.entries(watchList)) {
+    for (let [key, value] of Object.entries(movies)) {
       movieList.push(
 
         <MovieItem
@@ -144,7 +147,7 @@ class Search extends React.Component{
 
     return (
       <div className='search-results'>
-        {this.searchResults()}
+        {list1}
       </div>
     )
   }
