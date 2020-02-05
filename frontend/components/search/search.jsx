@@ -10,7 +10,8 @@ class Search extends React.Component{
       search: ""
     }
 
-    this.searchResults = this.searchResults.bind(this);
+    this.titleResults = this.titleResults.bind(this);
+    this.peopleResults = this.peopleResults.bind(this);
     this.checkSearch = this.checkSearch.bind(this);
     this.placeFocus = this.placeFocus.bind(this);
     this.updateList = this.updateList.bind(this);
@@ -35,19 +36,28 @@ class Search extends React.Component{
     }, 100);
   }
 
-  searchResults() {
+  titleResults() {
     let titles = [];
-    let people = [];
     for (let i = 0; i <= 25; i++){
       let current = this.props.movies[i];
       if (current && (current.title.toLowerCase().includes(this.state.search.toLowerCase()))){
         titles.push(current);
       }
-      if (current && (current.cast.toLowerCase().includes(this.state.search.toLowerCase())) || (current.director.toLowerCase().includes(this.state.search.toLowerCase()))){
+      
+    }
+    return titles;
+  }
+
+  peopleResults() {
+    let people = [];
+    for (let i = 0; i <= 25; i++) {
+      let current = this.props.movies[i];
+
+      if (current && (current.cast.toLowerCase().includes(this.state.search.toLowerCase())) || (current.director.toLowerCase().includes(this.state.search.toLowerCase()))) {
         people.push(current);
       }
     }
-    return ({titles: titles, people: people});
+    return people;
   }
 
   handlePlay(e) {
@@ -120,13 +130,26 @@ class Search extends React.Component{
 
   render(){
 
-    const results = this.searchResults();
-    const movies = results.movies;
-    const people = results.people;
+    const movies = this.titleResults();
+    const people = this.peopleResults();
 
     const movieList = [];
     for (let [key, value] of Object.entries(movies)) {
       movieList.push(
+
+        <MovieItem
+          key={value.id}
+          movie={value}
+          that={this}
+          state={this.state}
+        />
+
+      )
+    }
+
+    const peopleList = [];
+    for (let [key, value] of Object.entries(people)) {
+      peopleList.push(
 
         <MovieItem
           key={value.id}
@@ -147,7 +170,13 @@ class Search extends React.Component{
 
     return (
       <div className='search-results'>
-        {list1}
+        <div classname='watch-movies'>
+          <ul className='movie-ul'>
+            <div className='watch-lis'>
+              {this.listPlacement(list1)}
+            </div>
+          </ul>
+        </div>
       </div>
     )
   }
