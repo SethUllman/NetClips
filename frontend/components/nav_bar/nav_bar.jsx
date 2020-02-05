@@ -26,34 +26,29 @@ export default ({ currentUser, logout }) => {
   );
 
   const searchBar = currentUser ? (
-    <div></div>
+    <div className='search-bar'>
+      <div className='search-icon' onClick={() => {
+        return (
+          <div className='search-input'>
+            <input type="text" />
+          </div>
+        );
+      }}>
+        <FaSearch />
+      </div>
+    </div>
   ) : (
     <div></div>
   );
   
   const logoutBtn = currentUser ? (
-    <ul className='search-header'>
-      <li>
-        <div className='search-bar'>
-          <div className='search-icon' onClick={ () => {
-            return (
-              <div className='search-input'>
-                <input type="text" />
-              </div>
-            );
-          }}>
-            <FaSearch/>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div className='logout-btn'>
-            <button onClick={() => {
-              logout();
-              }}>Logout</button>
-        </div>
-      </li>
-    </ul>
+    
+    <div className='logout-btn'>
+        <button onClick={() => {
+          logout();
+          }}>Logout</button>
+    </div>
+      
   ) : (
     <div></div>
   );
@@ -68,7 +63,8 @@ export default ({ currentUser, logout }) => {
           {display}
         </div>
       </div>
-      <div >
+      <div className='nav-search'> 
+        {searchBar}
         {logoutBtn}
       </div>
     </header>
