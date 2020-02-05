@@ -27,7 +27,6 @@ class movieIndex extends React.Component{
     while (!found && i < 51) {
       let list = this.props.watchList[i];
       if (featured){
-        debugger;
         if (list && list.title.includes('Sonic')){
           return <button className='featured-in-list' onClick={() => {this.updateList(true)}}><FaCheck />MY LIST</button>
         } else {
