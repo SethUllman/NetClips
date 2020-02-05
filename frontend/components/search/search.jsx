@@ -210,6 +210,7 @@ class Search extends React.Component{
               {this.listPlacement(list5)}
             </div>
           </ul>
+          {this.placeFocus(list5)}
           <ul className='movie-ul'>
             <div className='watch-lis'>
               {this.listPlacement(list6)}
