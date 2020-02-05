@@ -46,6 +46,7 @@ class NavBar extends React.Component{
             <input 
               type="text" 
               value={this.state.search}
+              placeholder="Titles, people"
             />
           </div>
         </div>
