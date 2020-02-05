@@ -166,8 +166,11 @@ class Search extends React.Component{
     let list2 = movieList.splice(0, 6);
     let list3 = movieList.splice(0, 6);
     let list4 = movieList.splice(0, 6);
-    let list5 = movieList.splice(0, 6);
-    let list6 = movieList.splice(0, 6);
+    
+    let list5 = peopleList.splice(0, 6);
+    let list6 = peopleList.splice(0, 6);
+    let list7 = peopleList.splice(0, 6);
+    let list8 = peopleList.splice(0, 6);
 
     return (
       <div className='search-results'>
@@ -199,6 +202,32 @@ class Search extends React.Component{
             </div>
           </ul>
           {this.placeFocus(list4)}
+          <ul className='movie-ul'>
+            <div className='search-title'>
+              People
+          </div>
+            <div className='watch-lis'>
+              {this.listPlacement(list5)}
+            </div>
+          </ul>
+          <ul className='movie-ul'>
+            <div className='watch-lis'>
+              {this.listPlacement(list6)}
+            </div>
+          </ul>
+          {this.placeFocus(list6)}
+          <ul className='movie-ul'>
+            <div className='watch-lis'>
+              {this.listPlacement(list7)}
+            </div>
+          </ul>
+          {this.placeFocus(list7)}
+          <ul className='movie-ul'>
+            <div className='watch-lis'>
+              {this.listPlacement(list8)}
+            </div>
+          </ul>
+          {this.placeFocus(list8)}
         </div>
       </div>
     )
