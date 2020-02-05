@@ -6,13 +6,13 @@ class NavBar extends React.Component{
   constructor(props){
     super(props);
 
+    this.state = {
+      search: null
+    }
+
     this.display = this.display.bind(this);
     this.searchBar = this.searchBar.bind(this);
     this.logoutBtn = this.logoutBtn.bind(this);
-  }
-
-  componentDidMount(){
-
   }
 
   display() {
@@ -64,6 +64,12 @@ class NavBar extends React.Component{
       );
 
     }
+  }
+
+  handleInput() {
+    return (e) => {
+      this.setState({ search: e.target.value });
+    };
   }
 
   render() {
