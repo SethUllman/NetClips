@@ -39,14 +39,14 @@ class NavBar extends React.Component{
     if (this.props.currentUser){
       return (
         <div className='search-bar'>
-          <div className='search-icon' onClick={() => {
-            return (
-              <div className='search-input'>
-                <input type="text" />
-              </div>
-            );
-          }}>
+          <div className='search-icon'>
             <FaSearch />
+          </div>
+          <div className='search-input'>
+            <input 
+              type="text" 
+              value={this.state.search}
+            />
           </div>
         </div>
       )

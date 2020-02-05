@@ -35,7 +35,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 10%;
+  width: 25%;
 }
 
 .nav-bar-ul {
@@ -62,7 +62,9 @@
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 34px;
+  border: 1px solid white;
 }
 
 .search-icon {
@@ -73,6 +75,7 @@
 
 .search-input {
   margin-left: 5px;
+  width: 85%;
 }
 
 .search-header {
