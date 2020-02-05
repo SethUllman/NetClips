@@ -7,6 +7,7 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import MoviesIndexContainer from './movies/movie_index_container';
 import MoviesShowContainer from './movies/movie_show_container';
 import WatchListContainer from './watch_list/watch_list_container';
+import SearchContainer from './search/search_container';
 
 export default () => (
   <div className='whole-page'> 

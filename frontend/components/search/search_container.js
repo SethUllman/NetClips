@@ -23,4 +23,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(search));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
