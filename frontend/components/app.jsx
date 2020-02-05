@@ -18,6 +18,7 @@ export default () => (
       <ProtectedRoute path="/movies/:movieId" component={MoviesShowContainer} />
       <ProtectedRoute path="/watch_list/:userId" component={WatchListContainer} />
       <ProtectedRoute path="/movies" component={MoviesIndexContainer} />
+      <ProtectedRoute path='/search' component={SearchContainer} />
       <RootRoute exact path="/" />
     </Switch>
   </div>
