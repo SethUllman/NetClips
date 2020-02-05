@@ -23,8 +23,8 @@ class Search extends React.Component{
   }
 
   componentDidMount(){
-    // this.props.fetchMovies();
-    // this.props.fetchWatchList();
+    this.props.fetchMovies();
+    this.props.fetchWatchList();
     this.checkSearch();
 
   }
