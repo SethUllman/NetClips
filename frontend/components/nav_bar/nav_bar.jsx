@@ -2,6 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 
+class NavBar extends React.Component{
+  constructor(props){
+    super(props);
+  }
+
+  render() {
+    return (
+      <header className="nav-bar">
+        <div className='nav-options'>
+          <div className="logo">
+            <Link to='/movies'>NETCLIPS</Link>
+          </div>
+          <div>
+            {display}
+          </div>
+        </div>
+        <div className='nav-search'>
+          {searchBar}
+          {logoutBtn}
+        </div>
+      </header>
+    )
+  }
+}
+
 export default ({ currentUser, logout }) => {
 
 
@@ -53,20 +78,7 @@ export default ({ currentUser, logout }) => {
     <div></div>
   );
 
-  return (
-    <header className="nav-bar">
-      <div className='nav-options'>
-        <div className="logo">
-          <Link to='/movies'>NETCLIPS</Link>
-        </div>
-        <div>
-          {display}
-        </div>
-      </div>
-      <div className='nav-search'> 
-        {searchBar}
-        {logoutBtn}
-      </div>
-    </header>
-  )
+  
 }
+
+export default NavBar;
