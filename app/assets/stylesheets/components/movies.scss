@@ -1,6 +1,5 @@
 
 .movies-index-div {
-  // border: 3px solid red;
   position: relative;
   background-color: #131313;
   background-size: cover;
@@ -8,7 +7,6 @@
   overflow-x: hidden;
   display: flex;
   justify-content: center;
-  // overflow-y: hidden;
 }
 
 .movie-lis {
@@ -127,7 +125,6 @@
   font-weight: bold;
   font-size: 3vw;
   color: white;
-  // border: 3px solid yellow;
   width: 6vw;
   height: 6vw;
   z-index: 2;
@@ -138,7 +135,6 @@
 }
 
 .drop-content-container {
-  // border: 3px solid blue;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -150,7 +146,6 @@
   top: 0;
   left: 10px;
   right: 67%;
-  // bottom: 0;
   padding: 10px;
   z-index: 1;
 }
@@ -162,19 +157,15 @@
 }
 
 .movie-title-div {
-  // border: 3px solid blue;
   height: 10vw;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  // overflow-wrap: break-word;
 }
 
 .movie-title {
   font-size: 3vw;
   color: white;
-  
-  // position: absolute;
 }
 
 .movie-rating {
@@ -189,7 +180,6 @@
 }
 
 .movie-info-div {
-  // border: 3px solid green;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -197,7 +187,6 @@
 }
 
 .movie-description-div {
-  // border: 3px solid yellow;
   display: flex;
   height: 8vw;
   align-items: center;
@@ -209,7 +198,6 @@
 }
 
 .movie-buttons-div {
-  // border: 3px solid red;
   height: 3vw;
   display: flex;
   flex-direction: row;
@@ -220,6 +208,7 @@
 .play-btn {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-left: 5px;
   padding-right: 5px;
   background-color: red;
@@ -239,6 +228,7 @@
 .add-list {
   display: flex;
   justify-content: center;
+  align-items: center;
   border: 1px solid #717171;
   border-radius: 1px;
   font-size: 1.5vw;
@@ -248,6 +238,7 @@
 .in-list {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   border: 1px solid #717171;
   border-radius: 1px;
   font-size: 1.5vw;
@@ -262,7 +253,6 @@
 }
 
 .movie-starring-div {
-  // border: 3px solid pink;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -274,18 +264,15 @@
 }
 
 .movie-starring {
-  // border: 1px solid red;
   padding-right: .5vw;
   font-size: 1vw;
   font-weight: bold;
 }
 
 .featured-movie-div {
-  // border: 3px solid blue;
   height: 55vw;
   width: 100%;
   display: flex;
-  // align-items: flex-end;
   position: relative;
 }
 
@@ -295,7 +282,6 @@
 }
 
 .featured-movie-info {
-  // border: 3px solid blue; 
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -311,13 +297,11 @@
 .featured-movie-title-div {
   display: flex;
   justify-content: center;
-  // border: 3px solid red;
   height: 15vw;
   width: 80%;
 }
 
 .featured-movie-title {
-  // border: 3px solid green;
   width: 34vw;
   font-size: 6vw;
   background-image: url('https://i.redd.it/v514dq4oehe21.png');
@@ -327,7 +311,6 @@
 }
 
 .featured-movie-buttons-div {
-  // border: 3px solid blue;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -344,6 +327,7 @@
 .featured-play-btn {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-left: 10px;
   padding-right: 10px;
   background-color: rgba(169, 169, 169, 0.3);
@@ -365,6 +349,7 @@
 .featured-add-list {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: rgba(160, 169, 169, 0.3);
   border-radius: 1px;
   font-size: 2vw;
@@ -375,6 +360,7 @@
 .featured-in-list {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   background-color: rgba(160, 169, 169, 0.3);
   border-radius: 1px;
   font-size: 2vw;
@@ -424,19 +410,4 @@
   position: absolute;
   top: 42vw;
   z-index: 2;
-}
-
-
-@media screen and (max-width: 500px) {
-
-    .movie-li {
-    border: 3px solid red;
-    text-align: center;
-    margin: 0 2px;
-    transition: transform 300ms ease 100ms;
-    width: 9vw;
-    height: 16vw;
-    position: relative;
-  }
-
 }
