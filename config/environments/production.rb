@@ -31,6 +31,8 @@ Rails.application.configure do
 
   config.assets.paths << Rails.root.join('app', 'assets', 'stylesheets', 'fonts')
   config.assets.precompile += %w( .svg .eot .woff .ttf )
+
+  ENV['DISABLE_DATABASE_ENVIRONMENT_CHECK'] = 1
   
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
