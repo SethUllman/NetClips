@@ -10,7 +10,7 @@ demo_user = User.new(email: 'demo@email.com', password: 'demo@email.com')
 demo_watch = WatchList.new(user_id: 1, movie_id: 1)
 
 #Featured Movie
-sonic = Movie.new(title: 'Sonic the Hedghog', year: 2020, director: 'Jeff Fowler', cast: 'Jim Carrey, Ben Schwartz, Javes Marsden', writers: 'Josh Miller, Patrick Casey, Oren Uziel', genres: 'feature', maturity_rating: 'PG', description: 'A cop in the rural town of Green Hills will help Sonic escape from the government who is looking to capture him.', likes: 0, image_url: 'no-image', video_url: 'https://vimeo.com/372833024')
+sonic = Movie.new(title: 'Sonic the Hedghog', year: 2020, director: 'Jeff Fowler', cast: 'Jim Carrey, Ben Schwartz, Javes Marsden', writers: 'Josh Miller, Patrick Casey, Oren Uziel', genres: 'feature', maturity_rating: 'PG', description: 'A cop in the rural town of Green Hills will help Sonic escape from the government who is looking to capture him.', likes: 0, image_url: 'https://static.techspot.com/images2/news/bigimage/2019/03/2019-03-05-image.jpg', video_url: 'https://vimeo.com/372833024')
 
 #Critically Acclaimed
 
